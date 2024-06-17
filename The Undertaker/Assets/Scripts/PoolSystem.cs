@@ -42,6 +42,19 @@ public class PoolSystem : MonoBehaviour
         }
     }
 
+    public GameObject GetBigSlime()
+    {
+        for (int i = 0; i < m_poolListBigSlimes.Count; i++)
+        {
+            if (m_poolListBigSlimes[i].activeSelf == false) return m_poolListBigSlimes[i];
+        }
+
+        GameObject instanceSomething = Instantiate(m_smallSlimePrefab, m_slimeTransform);
+        instanceSomething.SetActive(false);
+        m_poolListBigSlimes.Add(instanceSomething);
+        return instanceSomething;
+    }
+
     public GameObject GetSmallSlime()
     {
         for (int i = 0; i < m_poolListSmallSlimes.Count; i++)
@@ -55,6 +68,18 @@ public class PoolSystem : MonoBehaviour
         return instanceSomething;
     }
 
+    public GameObject GetMediumSlime()
+    {
+        for (int i = 0; i < m_poolListMediumSlimes.Count; i++)
+        {
+            if (m_poolListMediumSlimes[i].activeSelf == false) return m_poolListMediumSlimes[i];
+        }
+
+        GameObject instanceSomething = Instantiate(m_mediumSlimePrefab, m_slimeTransform);
+        instanceSomething.SetActive(false);
+        m_poolListMediumSlimes.Add(instanceSomething);
+        return instanceSomething;
+    }
 
 
 
