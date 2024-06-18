@@ -14,6 +14,11 @@ public class BigSlimeNew : EnemyBase
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, m_player.transform.position, m_speedOfMovement * Time.deltaTime);
+        if (m_player.transform.position.x > transform.position.x)
+        {
+            m_spriteRenderer.flipX = true;
+        }
+        else m_spriteRenderer.flipX = false;
     }
 
     public override void TouchedByHeroProjectile()

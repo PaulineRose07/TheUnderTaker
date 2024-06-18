@@ -18,11 +18,6 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*if (collision.gameObject.TryGetComponent<ProjectileBase>(out ProjectileBase projectile))
-        {
-            //m_lives -= projectile.m_damagesToEnemy;
-            //TouchedByHeroProjectile();
-        }*/
         if (collision.gameObject.layer == 7)
         {
             m_gameManager.DecreaseLives(m_damagesToPlayer);

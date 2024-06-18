@@ -7,21 +7,39 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] PoolSystem m_poolSystem;
     [SerializeField] GameManager m_gameManager;
-    [SerializeField] float m_spawnRadius = 10;
+    [SerializeField] List<GameObject> m_spawnPoints = new List<GameObject>();
+    [SerializeField] Sprite m_openedGrave;
+    private float m_timerSlime;
+    [SerializeField] float m_delayerSlimeSpawn = 2f;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //InvokeRepeating("SpawnMediumSlime", 1,2);
-        //InvokeRepeating("SpawnBigSlime", 1, 3);
-        //InvokeRepeating("SpawnSmallSlime", 4, 1);
+        m_timerSlime = .3f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        m_timerSlime -= Time.deltaTime;
+        if (m_timerSlime <= 0 && m_spawnPoints.Count > 0)
+        {
+            int methodSelected = Random.Range(0, 2);
+            if(methodSelected == 0)
+            {
+                SpawnSlime(Random.Range(1, 4));
+            }
+            if(methodSelected == 1)
+            {
+                SpawnMiniNecromancer();
+            }
+
+           
+            m_timerSlime = m_delayerSlimeSpawn;
+        }
+
     }
 
 
@@ -35,7 +53,12 @@ public class SpawnManager : MonoBehaviour
         else if( _sizeOfSlime == 2) instanceSplit = m_poolSystem.GetMediumSlime();
         else instanceSplit = m_poolSystem.GetSmallSlime();
 
-        instanceSplit.transform.position = Random.insideUnitCircle * m_spawnRadius;
+        GameObject randomSpawnPoint = m_spawnPoints[Random.Range(0,m_spawnPoints.Count)];
+        randomSpawnPoint.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        randomSpawnPoint.GetComponent<Collider2D>().enabled = false;
+        m_spawnPoints.Remove(randomSpawnPoint);
+
+        instanceSplit.transform.position = randomSpawnPoint.transform.position;
         instanceSplit.SetActive(true);
         var SplitScript = instanceSplit.GetComponent<EnemyBase>();
         SplitScript.m_gameManager = m_gameManager;
@@ -44,6 +67,11 @@ public class SpawnManager : MonoBehaviour
         var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
         SplitSlimeScript.m_player = m_gameManager.m_player;
 
+    }
+
+    private void SpawnMiniNecromancer()
+    {
+        Debug.Log("Mini Necromancer");
     }
     /*private void SpawnBigSlime() 
     {
