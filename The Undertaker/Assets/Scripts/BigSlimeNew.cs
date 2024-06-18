@@ -6,6 +6,10 @@ public class BigSlimeNew : EnemyBase
 {
     [SerializeField] private int m_sizeOfSlime;
 
+    private void Start()
+    {
+        m_spriteRenderer.enabled = false;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -14,7 +18,7 @@ public class BigSlimeNew : EnemyBase
 
     public override void TouchedByHeroProjectile()
     {
-        if (m_lives == 0)
+        if (m_lives <= 0)
         {
             StartCoroutine(EnemyDeath());
         }
@@ -24,6 +28,8 @@ public class BigSlimeNew : EnemyBase
     {
         m_gameManager.UpdateScore(m_pointsToScore);
         SplitWhenDead();
+        SplitWhenDead();
+        m_collider2D.enabled = false;
         m_spriteRenderer.enabled = false;
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
@@ -34,25 +40,26 @@ public class BigSlimeNew : EnemyBase
         if(m_sizeOfSlime == 3)
         {
             GameObject instanceSplit = m_poolSystem.GetMediumSlime();
-            instanceSplit.transform.position = transform.position;
-            instanceSplit.SetActive(true);
-            var SplitScript = instanceSplit.GetComponent<EnemyBase>();
-            SplitScript.m_gameManager = m_gameManager;
-            SplitScript.m_poolSystem = m_poolSystem;
-            var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
-            SplitSlimeScript.m_player = m_gameManager.m_player;
+            //instanceSplit.transform.position = transform.position;
+            SlimeSplit(instanceSplit);
 
         }
         if(m_sizeOfSlime == 2)
         {
             GameObject instanceSplit = m_poolSystem.GetSmallSlime();
-            instanceSplit.transform.position = transform.position;
-            instanceSplit.SetActive(true);
-            var SplitScript = instanceSplit.GetComponent<EnemyBase>();
-            SplitScript.m_gameManager = m_gameManager;
-            SplitScript.m_poolSystem = m_poolSystem;
-            var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
-            SplitSlimeScript.m_player = m_gameManager.m_player;
+            SlimeSplit(instanceSplit);
         }
+    }
+
+    private void SlimeSplit(GameObject _instance)
+    {
+        _instance.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
+        _instance.SetActive(true);
+        var SplitScript = _instance.GetComponent<EnemyBase>();
+        SplitScript.m_gameManager = m_gameManager;
+        SplitScript.m_poolSystem = m_poolSystem;
+        SplitScript.m_collider2D.enabled = true;
+        var SplitSlimeScript = _instance.GetComponent<BigSlimeNew>();
+        SplitSlimeScript.m_player = m_gameManager.m_player;
     }
 }

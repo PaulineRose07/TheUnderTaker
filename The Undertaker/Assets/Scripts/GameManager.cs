@@ -28,7 +28,12 @@ public class GameManager : MonoBehaviour
         m_currentScore += _score;
     }
 
-    public void UpdateLives(int _lives)
+    public void IncreaseLives(int _lives)
+    {
+        m_currentLives += _lives;
+    }
+
+    public void DecreaseLives(int _lives)
     {
         m_currentLives -= _lives;
     }

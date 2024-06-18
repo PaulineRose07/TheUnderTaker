@@ -19,6 +19,16 @@ public class PoolSystem : MonoBehaviour
     [Space(12)]
     [SerializeField] Transform m_slimeTransform;
 
+    [Header("--- Hero Weapons ---")]
+    [SerializeField] GameObject m_shovelPrefab;
+    [Space(12)]
+    [SerializeField] public int m_nbOfShovels = 15;
+    [Space(12)]
+    [SerializeField] public List<GameObject> m_poolOfShovels = new List<GameObject>();
+    [Space(12)]
+    [SerializeField] Transform m_shovelTransfom;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +39,8 @@ public class PoolSystem : MonoBehaviour
         CreateInstances(m_nbOfMediumSlimes, m_poolListMediumSlimes, m_mediumSlimePrefab, m_slimeTransform);
         //Small Slime Spawn
         CreateInstances(m_nbOfSmallSlimes, m_poolListSmallSlimes, m_smallSlimePrefab, m_slimeTransform);
+        //Shovels
+        CreateInstances(m_nbOfShovels, m_poolOfShovels, m_shovelPrefab, m_shovelTransfom);
     }
 
 
@@ -42,6 +54,18 @@ public class PoolSystem : MonoBehaviour
         }
     }
 
+    public GameObject GetAvailableShovel()
+    {
+        for (int i = 0; i < m_poolOfShovels.Count; i++)
+        {
+            if (m_poolOfShovels[i].activeSelf == false) return m_poolOfShovels[i];
+        }
+
+        GameObject instanceSomething = Instantiate(m_shovelPrefab, m_shovelTransfom);
+        instanceSomething.SetActive(false);
+        m_poolOfShovels.Add(instanceSomething);
+        return instanceSomething;
+    }
     public GameObject GetBigSlime()
     {
         for (int i = 0; i < m_poolListBigSlimes.Count; i++)

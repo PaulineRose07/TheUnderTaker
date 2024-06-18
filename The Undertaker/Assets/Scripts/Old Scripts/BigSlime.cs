@@ -38,7 +38,7 @@ public class BigSlime : MonoBehaviour
         }
         if (collision.gameObject.layer == 7)
         {
-            m_gameManager.UpdateLives(m_damagesToPlayer);
+            m_gameManager.DecreaseLives(m_damagesToPlayer);
         }
     }
 

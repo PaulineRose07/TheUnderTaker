@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         //InvokeRepeating("SpawnMediumSlime", 1,2);
-        InvokeRepeating("SpawnBigSlime", 1, 3);
+        //InvokeRepeating("SpawnBigSlime", 1, 3);
         //InvokeRepeating("SpawnSmallSlime", 4, 1);
     }
 
@@ -40,8 +40,10 @@ public class SpawnManager : MonoBehaviour
         var SplitScript = instanceSplit.GetComponent<EnemyBase>();
         SplitScript.m_gameManager = m_gameManager;
         SplitScript.m_poolSystem = m_poolSystem;
+        SplitScript.m_collider2D.enabled = true;
         var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
         SplitSlimeScript.m_player = m_gameManager.m_player;
+
     }
     /*private void SpawnBigSlime() 
     {
