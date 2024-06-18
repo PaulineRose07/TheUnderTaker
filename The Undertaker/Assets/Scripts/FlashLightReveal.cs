@@ -10,6 +10,10 @@ public class FlashLightReveal : MonoBehaviour
         {
             component.ShowYourself();
         }
+        if(collision.gameObject.TryGetComponent<GraveBehavior>(out GraveBehavior behavior))
+        {
+            behavior.MaterialChangeToUnlit();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -17,6 +21,10 @@ public class FlashLightReveal : MonoBehaviour
         if (collision.gameObject.TryGetComponent<EnemyBase>(out EnemyBase component))
         {
             component.HideYourself();
+        }
+        if (collision.gameObject.TryGetComponent<GraveBehavior>(out GraveBehavior behavior))
+        {
+            behavior.MaterialBackToDark();
         }
     }
 }

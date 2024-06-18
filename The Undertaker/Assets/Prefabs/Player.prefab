@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 8
   m_rotationSpeed: 0.8
+  m_spriteRenderer: {fileID: 5367413254148073303}
 --- !u!58 &379829403159872141
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -465,8 +466,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.77
-  m_Range: 7.15
+  m_Intensity: 4.5
+  m_Range: 7
   m_SpotAngle: 43.6
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

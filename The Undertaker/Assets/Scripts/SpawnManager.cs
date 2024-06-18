@@ -11,6 +11,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Sprite m_openedGrave;
     private float m_timerSlime;
     [SerializeField] float m_delayerSlimeSpawn = 2f;
+    [SerializeField] int m_maximumAmountOfSpawns = 4;
+    private int m_amountOfSpawns;
     
 
 
@@ -23,21 +25,25 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_timerSlime -= Time.deltaTime;
-        if (m_timerSlime <= 0 && m_spawnPoints.Count > 0)
-        {
-            int methodSelected = Random.Range(0, 2);
-            if(methodSelected == 0)
+        if (m_amountOfSpawns < m_maximumAmountOfSpawns) 
+        { 
+            m_timerSlime -= Time.deltaTime;
+            if (m_timerSlime <= 0 && m_spawnPoints.Count > 0)
             {
-                SpawnSlime(Random.Range(1, 4));
-            }
-            if(methodSelected == 1)
-            {
-                SpawnMiniNecromancer();
-            }
+                int methodSelected = Random.Range(0, 2);
+                if(methodSelected == 0)
+                {
+                    SpawnSlime(Random.Range(1, 4));
+                    m_amountOfSpawns++;
 
-           
-            m_timerSlime = m_delayerSlimeSpawn;
+                }
+                if(methodSelected == 1)
+                {
+                    SpawnMiniNecromancer();
+                    m_amountOfSpawns++;
+                }    
+                m_timerSlime = m_delayerSlimeSpawn;
+            }
         }
 
     }
@@ -54,8 +60,7 @@ public class SpawnManager : MonoBehaviour
         else instanceSplit = m_poolSystem.GetSmallSlime();
 
         GameObject randomSpawnPoint = m_spawnPoints[Random.Range(0,m_spawnPoints.Count)];
-        randomSpawnPoint.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-        randomSpawnPoint.GetComponent<Collider2D>().enabled = false;
+        randomSpawnPoint.GetComponent<GraveBehavior>().ChangeGraveWhenOpen();
         m_spawnPoints.Remove(randomSpawnPoint);
 
         instanceSplit.transform.position = randomSpawnPoint.transform.position;

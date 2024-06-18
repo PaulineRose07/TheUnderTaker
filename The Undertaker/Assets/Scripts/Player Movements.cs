@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerMovements : MonoBehaviour
     Vector3 m_mousePosition;
     [SerializeField] private float m_speed = 10f;
     [SerializeField] private float m_rotationSpeed = .8f;
+    [SerializeField] private SpriteRenderer m_spriteRenderer;
 
     // Start is called before the first frame update
     void Awake()
@@ -30,5 +32,22 @@ public class PlayerMovements : MonoBehaviour
         var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
+    }
+
+    public void LoseOneLife()
+    {
+        StartCoroutine(BlinkWhenLosingLife());
+    }
+
+    IEnumerator BlinkWhenLosingLife()
+    {
+        yield return new WaitForSeconds(.2f);
+        m_spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.enabled = true;
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.enabled = true;
     }
 }

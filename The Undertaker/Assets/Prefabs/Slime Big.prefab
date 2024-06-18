@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 951147977615762994}
   - component: {fileID: 1301392609565523642}
-  - component: {fileID: 1059553475299905866}
+  - component: {fileID: 391636547062358254}
   m_Layer: 0
   m_Name: Slime Big
   m_TagString: Untagged
@@ -54,10 +54,10 @@ MonoBehaviour:
   m_pointsToScore: 3
   m_speedOfMovement: 0.5
   m_spriteRenderer: {fileID: 3552364352864797253}
-  m_collider2D: {fileID: 1059553475299905866}
+  m_collider2D: {fileID: 391636547062358254}
   m_sizeOfSlime: 3
---- !u!61 &1059553475299905866
-BoxCollider2D:
+--- !u!58 &391636547062358254
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,18 +89,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.62, y: 1.98}
-  m_EdgeRadius: 0
+  m_Radius: 1.17
 --- !u!1 &7528083870860353746
 GameObject:
   m_ObjectHideFlags: 0
