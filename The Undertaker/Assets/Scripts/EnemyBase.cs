@@ -15,6 +15,10 @@ public abstract class EnemyBase : MonoBehaviour
     public SpriteRenderer m_spriteRenderer;
     public Collider2D m_collider2D;
     [SerializeField] private int m_difficulty;
+    public AudioSource m_audioSource;
+    public List<AudioClip> m_clipListExplosion;
+
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
