@@ -48,16 +48,5 @@ public class HealthBar : MonoBehaviour
 
         slowChangeBar.SetWidth(m_targetWidth);
     }
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ChangeHealthBar(1);
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            ChangeHealthBar(-1);
-        }
-    }
+    
 }
