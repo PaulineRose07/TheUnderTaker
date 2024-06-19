@@ -22,10 +22,15 @@ public class ChamberManager : MonoBehaviour
     [SerializeField] public int m_amountOfActiveDoors;
     [SerializeField] public float m_timerForSpawn;
 
-    
+    private void Awake() {
+        m_gameManager = FindObjectOfType<GameManager>();
+        m_uiManager = FindObjectOfType<uiManager>();
+        m_poolSystem = FindObjectOfType<PoolSystem>();
+    }
     // Start is called before the first frame update
     void Start()
     {
+      
         m_player = m_gameManager.m_player;
     }
 
