@@ -615,6 +615,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1379554385931284174, guid: db711822bc02ff44f82b57c83995af58, type: 3}
+      propertyPath: m_healPrefab
+      value: 
+      objectReference: {fileID: 4794091155597294380, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+    - target: {fileID: 1379554385931284174, guid: db711822bc02ff44f82b57c83995af58, type: 3}
+      propertyPath: m_speedPrefab
+      value: 
+      objectReference: {fileID: 7633391567629971644, guid: 0471b38be1fdec64ca32993e1601c9f1, type: 3}
+    - target: {fileID: 1379554385931284174, guid: db711822bc02ff44f82b57c83995af58, type: 3}
+      propertyPath: m_shieldPrefab
+      value: 
+      objectReference: {fileID: 2532241660701036410, guid: 3fb2f0e40d766b441940476c2c65a12c, type: 3}
     - target: {fileID: 3810057868954576944, guid: db711822bc02ff44f82b57c83995af58, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotionBase : MonoBehaviour
+public abstract class PotionBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject m_player;
+    public GameManager m_gameManager;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.TryGetComponent<PlayerMovements>(out PlayerMovements playerMovements))
+        {
+            AddPowerUpToPlayer();
+            DeactivateWhenTouched();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public abstract void AddPowerUpToPlayer();
+
+    private void DeactivateWhenTouched()
     {
-        
+        gameObject.SetActive(false);
     }
 }

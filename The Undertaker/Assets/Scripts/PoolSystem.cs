@@ -21,13 +21,21 @@ public class PoolSystem : MonoBehaviour
 
     [Header("--- Hero Weapons ---")]
     [SerializeField] GameObject m_shovelPrefab;
-    [Space(12)]
     [SerializeField] public int m_nbOfShovels = 15;
-    [Space(12)]
-    [SerializeField] public List<GameObject> m_poolOfShovels = new List<GameObject>();
-    [Space(12)]
     [SerializeField] Transform m_shovelTransfom;
+    [SerializeField] public List<GameObject> m_poolOfShovels = new List<GameObject>();
 
+    [Header("--- Items ---")]
+    [SerializeField] GameObject m_healPrefab;
+    [SerializeField] GameObject m_speedPrefab;
+    [SerializeField] GameObject m_shieldPrefab;
+    [SerializeField] public int m_nbOfPotions = 2;
+    [SerializeField] public List<GameObject> m_poolOfHealPotions = new List<GameObject>();
+    [SerializeField] public List<GameObject> m_poolOfSpeedPotions = new List<GameObject>();
+    [SerializeField] public List<GameObject> m_poolOfShieldPotions = new List<GameObject>();
+    [SerializeField] Transform m_healTransform;
+    [SerializeField] Transform m_speedTransform;
+    [SerializeField] Transform m_shieldTransform;
 
 
     // Start is called before the first frame update
@@ -41,6 +49,13 @@ public class PoolSystem : MonoBehaviour
         CreateInstances(m_nbOfSmallSlimes, m_poolListSmallSlimes, m_smallSlimePrefab, m_slimeTransform);
         //Shovels
         CreateInstances(m_nbOfShovels, m_poolOfShovels, m_shovelPrefab, m_shovelTransfom);
+
+        // Shield potion
+        CreateInstances(m_nbOfPotions, m_poolOfShieldPotions, m_shieldPrefab, m_shieldTransform);
+        // Speed potion
+        CreateInstances(m_nbOfPotions, m_poolOfSpeedPotions, m_speedPrefab, m_speedTransform);
+        // Heal Potion
+        CreateInstances(m_nbOfPotions, m_poolOfHealPotions, m_healPrefab, m_healTransform);
     }
 
 
@@ -78,7 +93,6 @@ public class PoolSystem : MonoBehaviour
         m_poolListBigSlimes.Add(instanceSomething);
         return instanceSomething;
     }
-
     public GameObject GetSmallSlime()
     {
         for (int i = 0; i < m_poolListSmallSlimes.Count; i++)
@@ -91,7 +105,6 @@ public class PoolSystem : MonoBehaviour
         m_poolListSmallSlimes.Add(instanceSomething);
         return instanceSomething;
     }
-
     public GameObject GetMediumSlime()
     {
         for (int i = 0; i < m_poolListMediumSlimes.Count; i++)
@@ -105,6 +118,44 @@ public class PoolSystem : MonoBehaviour
         return instanceSomething;
     }
 
+    public GameObject GetHealingPotion()
+    {
+        for (int i = 0; i < m_poolOfHealPotions.Count; i++)
+        {
+            if (m_poolOfHealPotions[i].activeSelf == false) return m_poolOfHealPotions[i];
+        }
+
+        GameObject healPotion = Instantiate(m_healPrefab, m_healTransform);
+        healPotion.SetActive(false);
+        m_poolOfHealPotions.Add(healPotion);
+        return healPotion;
+    }
+
+    public GameObject GetSpeedPotion()
+    {
+        for (int i = 0; i < m_poolOfSpeedPotions.Count; i++)
+        {
+            if (m_poolOfSpeedPotions[i].activeSelf == false) return m_poolOfSpeedPotions[i];
+        }
+
+        GameObject speedPotion = Instantiate(m_speedPrefab, m_speedTransform);
+        speedPotion.SetActive(false);
+        m_poolOfSpeedPotions.Add(speedPotion);
+        return speedPotion;
+    }
+
+    public GameObject GetShieldPotion()
+    {
+        for (int i = 0; i < m_poolOfShieldPotions.Count; i++)
+        {
+            if (m_poolOfShieldPotions[i].activeSelf == false) return m_poolOfShieldPotions[i];
+        }
+
+        GameObject shieldPotion = Instantiate(m_shieldPrefab, m_shieldTransform);
+        shieldPotion.SetActive(false);
+        m_poolOfShieldPotions.Add(shieldPotion);
+        return shieldPotion;
+    }
 
 
     public GameObject GetFirstAvailable(List<GameObject> _poolList, GameObject _prefab, Transform _transform)
@@ -120,9 +171,4 @@ public class PoolSystem : MonoBehaviour
         return instanceSomething;
     }
 
-
-    void Update()
-    {
-        
-    }
 }
