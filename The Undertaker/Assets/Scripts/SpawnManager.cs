@@ -7,12 +7,13 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] PoolSystem m_poolSystem;
     [SerializeField] GameManager m_gameManager;
-    [SerializeField] List<GameObject> m_spawnPoints = new List<GameObject>();
+    [SerializeField] public List<GameObject> m_spawnPoints = new List<GameObject>();
     [SerializeField] Sprite m_openedGrave;
     private float m_timerSlime;
     [SerializeField] float m_delayerSlimeSpawn = 2f;
     [SerializeField] int m_maximumAmountOfSpawns = 4;
-    private int m_amountOfSpawns;
+    [SerializeField] public int m_addingSpawnCount;
+
     
 
 
@@ -25,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_amountOfSpawns < m_maximumAmountOfSpawns) 
+        if (m_addingSpawnCount < m_maximumAmountOfSpawns) 
         { 
             m_timerSlime -= Time.deltaTime;
             if (m_timerSlime <= 0 && m_spawnPoints.Count > 0)
@@ -34,13 +35,12 @@ public class SpawnManager : MonoBehaviour
                 if(methodSelected == 0)
                 {
                     SpawnSlime(Random.Range(1, 4));
-                    m_amountOfSpawns++;
-
+                    m_gameManager.m_amountOfSpawns++;
                 }
                 if(methodSelected == 1)
                 {
                     SpawnMiniNecromancer();
-                    m_amountOfSpawns++;
+                    //m_gameManager.m_amountOfSpawns++;
                 }    
                 m_timerSlime = m_delayerSlimeSpawn;
             }

@@ -32,6 +32,7 @@ public class BigSlimeNew : EnemyBase
     IEnumerator EnemyDeath()
     {
         m_gameManager.UpdateScore(m_pointsToScore);
+        m_gameManager.m_amountOfSpawns--;
         SplitWhenDead();
         SplitWhenDead();
         m_collider2D.enabled = false;
@@ -66,5 +67,7 @@ public class BigSlimeNew : EnemyBase
         SplitScript.m_collider2D.enabled = true;
         var SplitSlimeScript = _instance.GetComponent<BigSlimeNew>();
         SplitSlimeScript.m_player = m_gameManager.m_player;
+        m_gameManager.m_amountOfSpawns++;
+
     }
 }
