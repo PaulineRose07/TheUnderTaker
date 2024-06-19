@@ -13,6 +13,9 @@ public abstract class EnemyBase : MonoBehaviour
     public float m_speedOfMovement;
     public SpriteRenderer m_spriteRenderer;
     public Collider2D m_collider2D;
+    public AudioSource m_audioSource;
+    public List<AudioClip> m_clipListExplosion;
+
 
 
 
