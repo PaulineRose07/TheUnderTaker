@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         {
             m_spawnManager.RefreshSpawnPointsSprite();
             m_doorBehaviour.UnlockDoor();
-            m_directionalLight.intensity = 1.2f;
+            m_directionalLight.intensity = 0.5f;
         }
     }
     public void ChangeChambers(ChamberManager _chamberManager)

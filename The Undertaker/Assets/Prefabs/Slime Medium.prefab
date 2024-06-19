@@ -100,6 +100,7 @@ MonoBehaviour:
   m_speedOfMovement: 0.5
   m_spriteRenderer: {fileID: 4095418652898885538}
   m_collider2D: {fileID: 4064066867274198118}
+  m_difficulty: 1
   m_sizeOfSlime: 2
 --- !u!1 &6147365711284155139
 GameObject:

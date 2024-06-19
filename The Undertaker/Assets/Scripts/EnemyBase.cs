@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class EnemyBase : MonoBehaviour
 {
     public GameManager m_gameManager;
+    public SpawnManager m_spawnManager;
     public PoolSystem m_poolSystem;
     public GameObject m_player;
     public int m_damagesToPlayer;
@@ -13,7 +14,7 @@ public abstract class EnemyBase : MonoBehaviour
     public float m_speedOfMovement;
     public SpriteRenderer m_spriteRenderer;
     public Collider2D m_collider2D;
-
+    [SerializeField] private int m_difficulty;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,5 +36,16 @@ public abstract class EnemyBase : MonoBehaviour
     public void HideYourself()
     {
         m_spriteRenderer.enabled = false;
+    }
+
+    public void LootOnDeath()
+    {
+        int dropChance = Random.Range(0, 10);
+        if (m_difficulty == 3 && dropChance >= 9)
+            m_spawnManager.SpawnShieldPotion(transform.position);
+        if (m_difficulty >= 2 && dropChance >= 8)
+            m_spawnManager.SpawnSpeedPotion(transform.position);
+        if (m_difficulty >= 1 && dropChance >= 7)
+            m_spawnManager.SpawnHealthPotion(transform.position);
     }
 }
