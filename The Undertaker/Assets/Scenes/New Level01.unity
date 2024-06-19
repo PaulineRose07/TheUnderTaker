@@ -901,6 +901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6223037852621403047, guid: 2d460448c91ab48418f83d95f536dc01, type: 3}
+      propertyPath: m_maxLives
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8162319831172672427, guid: 2d460448c91ab48418f83d95f536dc01, type: 3}
       propertyPath: m_poolSystem
       value: 
