@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         if(m_spawnManager.m_spawnPoints.Count == 0 && m_amountOfSpawns == 0)
         {
+            m_spawnManager.RefreshSpawnPointsSprite();
             m_doorBehaviour.UnlockDoor();
             m_directionalLight.intensity = 1.2f;
         }
