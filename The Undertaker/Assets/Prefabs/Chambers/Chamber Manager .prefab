@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_doors: {fileID: 8029249571912338496}
+  m_roomIdInGMList: 0
+  m_chamberManager: {fileID: 4579068970813660055}
 --- !u!61 &1247077969426726887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -370,6 +372,7 @@ MonoBehaviour:
   m_difficultyLevel: 1
   m_amountOfActiveDoors: 0
   m_timerForSpawn: 0.3
+  m_hasAlreadyBeenVisited: 0
 --- !u!1 &3165252582239378672
 GameObject:
   m_ObjectHideFlags: 0

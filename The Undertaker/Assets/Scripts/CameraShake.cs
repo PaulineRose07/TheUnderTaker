@@ -11,6 +11,7 @@ public class CameraShake : MonoBehaviour
     private void Awake()
     {
         m_cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        enabled = false;
     }
    
     public void ShakeCamera(float _intensity, float _time)
@@ -22,6 +23,12 @@ public class CameraShake : MonoBehaviour
         m_shakeTimer = _time;
     }
 
+    public void CameraEnabled() {
+        enabled = true;
+    }
+
+    public void CameraDisabled() { enabled = false;
+    }
     private void Update()
     {
         if(m_shakeTimer > 0)
