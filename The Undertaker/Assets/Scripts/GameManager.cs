@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int m_currentLives;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseLives(int _lives)
     {
         m_currentLives += _lives;
+        m_healthBar.ChangeHealthBar(_lives);
     }
 
     public void DecreaseLives(int _lives)
@@ -78,4 +80,7 @@ public class GameManager : MonoBehaviour
         m_camera.ShakeCamera(2,.2f);
         m_player.GetComponent<PlayerMovements>().LoseOneLife();
     }
+
+
+
 }

@@ -11,12 +11,12 @@ public abstract class PotionBase : MonoBehaviour
     {
         if(collision.TryGetComponent<PlayerMovements>(out PlayerMovements playerMovements))
         {
-            AddPowerUpToPlayer();
+            AddPowerUpToPlayer(playerMovements);
             DeactivateWhenTouched();
         }
     }
 
-    public abstract void AddPowerUpToPlayer();
+    public abstract void AddPowerUpToPlayer(PlayerMovements playerMovements);
 
     private void DeactivateWhenTouched()
     {
