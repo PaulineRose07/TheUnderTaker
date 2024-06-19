@@ -75,10 +75,13 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseLives(int _lives)
     {
+        if (m_player.GetComponent<PlayerMovements>().m_isShielded) return;
+   
         m_currentLives -= _lives;
         m_healthBar.ChangeHealthBar(-_lives);
         m_camera.ShakeCamera(2,.2f);
         m_player.GetComponent<PlayerMovements>().LoseOneLife();
+        
     }
 
 
