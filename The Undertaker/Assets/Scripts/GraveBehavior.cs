@@ -26,6 +26,7 @@ public class GraveBehavior : MonoBehaviour
     {
         m_spriteRenderer.sprite = m_openedGrave;
         m_collider2D.isTrigger = true;
+        gameObject.layer = 11;
     }
 
     public void MaterialChangeToUnlit()

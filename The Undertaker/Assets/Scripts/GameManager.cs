@@ -6,23 +6,39 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("--- In Scene direct Links ---")]
     [SerializeField] public GameObject m_player;
     [SerializeField] private uiManager m_uiManager;
+    [Space(16)]
+
+    [Header("--- Chamber Links ---")]
     [SerializeField] private CameraShake m_camera;
     [SerializeField] private SpawnManager m_spawnManager;
     [SerializeField] private DoorBehaviour m_doorBehaviour;
     [SerializeField] private Light m_directionalLight;
+    [Space(8)]
     [SerializeField] public int m_amountOfSpawns;
+    [SerializeField] List<ChamberManager> m_chamberManagers;
 
+    [Space(16)]
+    [Header("--- Player Information --- ")]
     [SerializeField] public int m_currentScore;
     [SerializeField] public int m_currentLives;
 
-
+    public void ChangeChambers(ChamberManager _chamberManager)
+    {
+        m_amountOfSpawns = 0;
+        m_camera = _chamberManager.m_camera;
+        m_spawnManager = _chamberManager.m_spawnManager;
+        m_doorBehaviour = _chamberManager.m_doorBehaviour;
+        m_directionalLight = _chamberManager.m_directionalLight;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         m_currentLives = m_player.GetComponent<PlayerInformation>().m_maxLives;
+        ChangeChambers(m_chamberManagers[0]);
     }
 
     // Update is called once per frame

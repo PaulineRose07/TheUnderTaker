@@ -9,7 +9,6 @@ public class HeroWeaponBase : ProjectileBase
         m_collider = GetComponent<Collider2D>();
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<EnemyBase>(out EnemyBase enemyBase))
