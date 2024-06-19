@@ -24,13 +24,15 @@ public class GraveBehavior : MonoBehaviour
 
     public void ChangeGraveWhenOpen()
     {
-        m_spriteRenderer.sprite = m_openedGrave;
+        //m_spriteRenderer.sprite = m_openedGrave;
         m_collider2D.isTrigger = true;
         gameObject.layer = 11;
     }
 
     public void MaterialChangeToUnlit()
     {
+        if (gameObject.layer == 11)
+            m_spriteRenderer.sprite = m_openedGrave;
         m_spriteRenderer.material = m_unlitMaterial;
         m_spriteRenderer.sprite = m_openedGrave;
     }
