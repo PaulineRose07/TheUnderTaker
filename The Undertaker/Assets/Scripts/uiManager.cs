@@ -13,7 +13,7 @@ public class uiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_uiLives.text = m_gameManager.m_currentLives.ToString();
+        m_uiLives.text = "Lives : " + m_gameManager.m_currentLives.ToString();
         m_uiScore.text = m_gameManager.m_currentScore.ToString();
     }
 

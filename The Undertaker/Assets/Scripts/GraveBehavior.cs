@@ -32,6 +32,7 @@ public class GraveBehavior : MonoBehaviour
     public void MaterialChangeToUnlit()
     {
         m_spriteRenderer.material = m_unlitMaterial;
+        m_spriteRenderer.sprite = m_openedGrave;
     }
 
     public void MaterialBackToDark()

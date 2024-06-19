@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8534991375557022837}
   - component: {fileID: 379829403159872141}
   - component: {fileID: 8162319831172672427}
-  - component: {fileID: 5890963779743492251}
   - component: {fileID: 6223037852621403047}
   - component: {fileID: 7141107564332858102}
   m_Layer: 7
@@ -105,20 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_shootDelay: 1
   m_poolSystem: {fileID: 0}
---- !u!114 &5890963779743492251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3956205783957160532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5856899b749cf7642956ee7d8f0b1e6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_mat: {fileID: 0}
-  m_spriteRenderer: {fileID: 0}
 --- !u!114 &6223037852621403047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +206,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

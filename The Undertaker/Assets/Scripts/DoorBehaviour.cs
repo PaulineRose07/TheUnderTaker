@@ -12,7 +12,7 @@ public class DoorBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_spriteRenderer.sprite = m_doorClose;
+        m_spriteRenderer.sprite = m_doorOpen;
     }
 
     // Update is called once per frame
@@ -30,6 +30,5 @@ public class DoorBehaviour : MonoBehaviour
     {
         m_spriteRenderer.sprite = m_doorOpen;
         m_collider.isTrigger = true;
-
     }
 }

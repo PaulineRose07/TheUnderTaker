@@ -21,6 +21,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         m_poolSystem = m_chamberManager.m_poolSystem;
+        m_gameManager = m_chamberManager.m_gameManager;
         m_timerSlime = m_chamberManager.m_timerForSpawn;
         m_maximumAmountOfSpawns = m_chamberManager.m_maxSpawnOfEnemies;
         m_difficultyLevel = m_chamberManager.m_difficultyLevel;

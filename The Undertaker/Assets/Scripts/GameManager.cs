@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("--- In Scene direct Links ---")]
     [SerializeField] public GameObject m_player;
     [SerializeField] private uiManager m_uiManager;
+    [SerializeField] private HealthBar m_healthBar;
     [Space(16)]
 
     [Header("--- Chamber Links ---")]
@@ -25,19 +26,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int m_currentScore;
     [SerializeField] public int m_currentLives;
 
-    public void ChangeChambers(ChamberManager _chamberManager)
-    {
-        m_amountOfSpawns = 0;
-        m_camera = _chamberManager.m_camera;
-        m_spawnManager = _chamberManager.m_spawnManager;
-        m_doorBehaviour = _chamberManager.m_doorBehaviour;
-        m_directionalLight = _chamberManager.m_directionalLight;
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         m_currentLives = m_player.GetComponent<PlayerInformation>().m_maxLives;
+        m_healthBar.m_maxValue = m_currentLives;
         ChangeChambers(m_chamberManagers[0]);
     }
 
@@ -46,10 +40,17 @@ public class GameManager : MonoBehaviour
     {
         if(m_spawnManager.m_spawnPoints.Count == 0 && m_amountOfSpawns == 0)
         {
-
             m_doorBehaviour.UnlockDoor();
             m_directionalLight.intensity = 1.2f;
         }
+    }
+    public void ChangeChambers(ChamberManager _chamberManager)
+    {
+        m_amountOfSpawns = 0;
+        m_camera = _chamberManager.m_camera;
+        m_spawnManager = _chamberManager.m_spawnManager;
+        m_doorBehaviour = _chamberManager.m_doorBehaviour;
+        m_directionalLight = _chamberManager.m_directionalLight;
     }
 
     public void ResetWhenEnteringNewRoom()
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void DecreaseLives(int _lives)
     {
         m_currentLives -= _lives;
+        m_healthBar.ChangeHealthBar(-_lives);
         m_camera.ShakeCamera(2,.2f);
         m_player.GetComponent<PlayerMovements>().LoseOneLife();
     }
