@@ -8,6 +8,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] PoolSystem m_poolSystem;
     [SerializeField] GameManager m_gameManager;
     [SerializeField] public List<GameObject> m_spawnPoints = new List<GameObject>();
+    private List<GameObject> m_UsedSpawnPoints = new List<GameObject>();
     [SerializeField] Sprite m_openedGrave;
     private float m_timerSlime;
     [SerializeField] float m_delayerSlimeSpawn = 2f;
@@ -82,6 +83,7 @@ public class SpawnManager : MonoBehaviour
         GameObject randomSpawnPoint = m_spawnPoints[Random.Range(0,m_spawnPoints.Count)];
         randomSpawnPoint.GetComponent<GraveBehavior>().ChangeGraveWhenOpen();
         m_spawnPoints.Remove(randomSpawnPoint);
+        m_UsedSpawnPoints.Add(randomSpawnPoint);
 
         instanceSplit.transform.position = randomSpawnPoint.transform.position;
         instanceSplit.SetActive(true);
@@ -123,5 +125,11 @@ public class SpawnManager : MonoBehaviour
         instanceSplit.SetActive(true);
     }*/
 
-
+    public void RefreshSpawnsSprite()
+    {
+        for (int i = 0; i < m_UsedSpawnPoints.Count; i++)
+        {
+            m_UsedSpawnPoints[i].GetComponent<GraveBehavior>().MaterialChangeToUnlit();
+        }
+    }
 }
