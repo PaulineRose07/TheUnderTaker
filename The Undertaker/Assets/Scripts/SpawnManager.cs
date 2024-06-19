@@ -39,6 +39,7 @@ public class SpawnManager : MonoBehaviour
                 {
                     SpawnSlime(Random.Range(1, 4));
                     m_gameManager.m_amountOfSpawns++;
+                    m_timerSlime = m_delayerSlimeSpawn;
                 }
             }
         }
