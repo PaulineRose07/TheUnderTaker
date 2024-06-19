@@ -34,6 +34,7 @@ public class GraveBehavior : MonoBehaviour
         if (gameObject.layer == 11)
             m_spriteRenderer.sprite = m_openedGrave;
         m_spriteRenderer.material = m_unlitMaterial;
+        m_spriteRenderer.sprite = m_openedGrave;
     }
 
     public void MaterialBackToDark()
