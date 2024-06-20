@@ -74,6 +74,34 @@ public class SpawnManager : MonoBehaviour
                 }
             }
         }
+
+        if (m_difficultyLevel == 2-3)
+        {
+            if (m_addingSpawnCount < m_maximumAmountOfSpawns)
+            {
+                m_timerSlime -= Time.deltaTime;
+                if (m_timerSlime <= 0 && m_spawnPoints.Count > 0)
+                {
+                    int methodSelected = Random.Range(0, 3);
+                    if (methodSelected == 0)
+                    {
+                        SpawnSlime(Random.Range(1, 4));
+                        m_gameManager.m_amountOfSpawns++;
+                    }
+                    if (methodSelected == 1)
+                    {
+                        SpawnMiniNecromancer();
+                        m_gameManager.m_amountOfSpawns++;
+                    }
+                    if (methodSelected == 2)
+                    {
+                        SpawnSkeleton();
+                        m_gameManager.m_amountOfSpawns++;
+                    }
+                    m_timerSlime = m_delayerSlimeSpawn;
+                }
+            }
+        }
     }
 
 
@@ -142,15 +170,36 @@ public class SpawnManager : MonoBehaviour
 
         instanceOfMiniN.transform.position = randomSpawnPoint.transform.position;
         instanceOfMiniN.SetActive(true);
-        var SplitScript = instanceOfMiniN.GetComponent<EnemyBase>();
-        SplitScript.m_gameManager = m_gameManager;
-        SplitScript.m_poolSystem = m_poolSystem;
-        SplitScript.m_collider2D.enabled = true;
-        var SplitSlimeScript = instanceOfMiniN.GetComponent<MiniNecromancer>();
-        SplitSlimeScript.m_player = m_gameManager.m_player;
+        var miniNecromancerBase = instanceOfMiniN.GetComponent<EnemyBase>();
+        miniNecromancerBase.m_gameManager = m_gameManager;
+        miniNecromancerBase.m_poolSystem = m_poolSystem;
+        miniNecromancerBase.m_collider2D.enabled = true;
+        var miniNecromancerScript = instanceOfMiniN.GetComponent<MiniNecromancer>();
+        miniNecromancerScript.m_player = m_gameManager.m_player;
 
         Debug.Log("Mini Necromancer");
     }
+
+    private void SpawnSkeleton()
+    {
+        GameObject instanceOfMiniN = m_poolSystem.GetAvailableSkeleton();
+
+        GameObject randomSpawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
+        randomSpawnPoint.GetComponent<GraveBehavior>().ChangeGraveWhenOpen();
+        m_spawnPoints.Remove(randomSpawnPoint);
+        m_usedSpawnPoints.Add(randomSpawnPoint);
+
+        instanceOfMiniN.transform.position = randomSpawnPoint.transform.position * 0.5f;
+        instanceOfMiniN.SetActive(true);
+        var miniNecromancerBase = instanceOfMiniN.GetComponent<EnemyBase>();
+        miniNecromancerBase.m_gameManager = m_gameManager;
+        miniNecromancerBase.m_poolSystem = m_poolSystem;
+        miniNecromancerBase.m_collider2D.enabled = true;
+        var miniNecromancerScript = instanceOfMiniN.GetComponent<MiniNecromancer>();
+        miniNecromancerScript.m_player = m_gameManager.m_player;
+
+    }
+
 
     public void RefreshSpawnPointsSprite()
     {
