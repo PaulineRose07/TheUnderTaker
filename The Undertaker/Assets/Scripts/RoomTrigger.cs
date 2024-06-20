@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RoomTrigger : MonoBehaviour
 {
-    [SerializeField] DoorBehaviour m_doors;
+    [SerializeField] List<DoorBehaviour> m_doors;
+    //[SerializeField] DoorBehaviour m_doors;
     [SerializeField] ChamberManager m_chamberManager;
     [SerializeField] GameManager m_gameManager;
 
@@ -15,9 +16,12 @@ public class RoomTrigger : MonoBehaviour
     {
         if(collision.TryGetComponent<PlayerMovements>(out PlayerMovements component))
         {
-                m_doors.LockDoors();
-                gameObject.SetActive(false);
-                m_gameManager.InitializeChamber(m_chamberManager);
+            foreach(DoorBehaviour door in m_doors)
+            {
+                door.LockDoors();
+            }
+            gameObject.SetActive(false);
+            m_gameManager.InitializeChamber(m_chamberManager);
         }
     }
 }
