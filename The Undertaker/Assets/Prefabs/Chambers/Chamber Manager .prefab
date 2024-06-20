@@ -128,6 +128,7 @@ MonoBehaviour:
   m_doors: {fileID: 8029249571912338496}
   m_roomIdInGMList: 0
   m_chamberManager: {fileID: 4579068970813660055}
+  m_gameManager: {fileID: 0}
 --- !u!61 &1247077969426726887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -984,7 +985,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 0.9529412}
-  m_Intensity: 0.49
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
