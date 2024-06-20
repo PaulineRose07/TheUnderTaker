@@ -88,8 +88,9 @@ public class GameManager : MonoBehaviour {
     {
         var previousCam = m_virtualCamera;
         m_virtualCamera = _chamberManager.m_virtualCamera;
-        m_virtualCamera.Priority = 1;
         previousCam.Priority = 0;
+        m_virtualCamera.Priority = 1;
+        m_camera = _chamberManager.m_camera;
     }
     public void ResetWhenEnteringNewRoom()
     {

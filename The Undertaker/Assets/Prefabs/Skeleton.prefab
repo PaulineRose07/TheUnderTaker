@@ -177,16 +177,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 0}
+  m_spawnManager: {fileID: 0}
   m_poolSystem: {fileID: 0}
   m_player: {fileID: 0}
   m_damagesToPlayer: 0
   m_lives: 0
   m_pointsToScore: 0
-  m_speedOfMovement: 0
+  m_speedOfMovement: 0.1
   m_spriteRenderer: {fileID: 1456607995229612814}
   m_collider2D: {fileID: 6680807126061456094}
+  m_difficulty: 0
   m_audioSource: {fileID: 7381057480290181842}
   m_clipListExplosion: []
+  m_FleeCount: 2
+  m_fireDelay: 2
+  m_isShooting: 0
+  m_directionDelay: 1
 --- !u!82 &7381057480290181842
 AudioSource:
   m_ObjectHideFlags: 0

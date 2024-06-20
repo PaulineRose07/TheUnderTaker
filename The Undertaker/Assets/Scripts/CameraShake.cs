@@ -5,13 +5,13 @@ using Cinemachine;
 
 public class CameraShake : MonoBehaviour
 {
-    private CinemachineVirtualCamera m_cinemachineVirtualCamera;
+    [SerializeField] private CinemachineVirtualCamera m_cinemachineVirtualCamera;
     [SerializeField] private float m_shakeTimer;
     // Start is called before the first frame update
     private void Awake()
     {
         m_cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
-        enabled = false;
+        //enabled = false;
     }
    
     public void ShakeCamera(float _intensity, float _time)

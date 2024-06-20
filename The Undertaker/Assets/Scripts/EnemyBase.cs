@@ -30,12 +30,12 @@ public abstract class EnemyBase : MonoBehaviour
 
     }
 
-    public void OnTriggerReaction()
+    public virtual void OnTriggerReaction()
     {
 
     }
 
-    public void OnTriggerExitReaction()
+    public virtual void OnTriggerExitReaction()
     {
 
     }

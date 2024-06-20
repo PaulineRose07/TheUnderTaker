@@ -48,10 +48,13 @@ public class Skeleton : EnemyBase
         MoveWhenSeen();
     }
 
-    public new void OnTriggerReaction()
+    public override void OnTriggerReaction()
     {
+        Debug.Log("1");
         m_isShooting = false;
+        Debug.Log("2");
         m_timerFlee = m_FleeCount;
+        Debug.Log("3");
     }
 
    
@@ -75,7 +78,7 @@ public class Skeleton : EnemyBase
         }
     }
 
-    public new void OnTriggerExitReaction()
+    public override void OnTriggerExitReaction()
     {
         m_isShooting = true;
         

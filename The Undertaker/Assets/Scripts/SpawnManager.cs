@@ -68,7 +68,7 @@ public class SpawnManager : MonoBehaviour
                     }
                     if(methodSelected == 1)
                     {
-                        SpawnMiniNecromancer();
+                        SpawnSkeleton();
                         m_gameManager.m_amountOfSpawns++;
                     }    
                     m_timerSlime = m_delayerSlimeSpawn;
@@ -91,12 +91,12 @@ public class SpawnManager : MonoBehaviour
                     }
                     if (methodSelected == 1)
                     {
-                        SpawnMiniNecromancer();
+                        SpawnSkeleton();
                         m_gameManager.m_amountOfSpawns++;
                     }
                     if (methodSelected == 2)
                     {
-                        SpawnSkeleton();
+                        SpawnMiniNecromancer();
                         m_gameManager.m_amountOfSpawns++;
                     }
                     m_timerSlime = m_delayerSlimeSpawn;
