@@ -4,21 +4,9 @@ using UnityEngine;
 
 public class ShieldPotion : PotionBase
 {
+    [SerializeField] private int m_shieldTimer;
     public override void AddPowerUpToPlayer(PlayerMovements playerMovements)
     {
-        throw new System.NotImplementedException();
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerMovements.AddShield(m_shieldTimer);
     }
 }

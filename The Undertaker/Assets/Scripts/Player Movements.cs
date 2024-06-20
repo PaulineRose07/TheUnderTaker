@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using DG.Tweening;
 
 
 public class PlayerMovements : MonoBehaviour
@@ -15,13 +16,13 @@ public class PlayerMovements : MonoBehaviour
     private float m_shieldTimer;
     [SerializeField] private GameObject m_shieldPrefab;
     [SerializeField] private float m_baseSpeed=10f;
+    [SerializeField] public bool m_isShielded;
 
     // Start is called before the first frame update
     void Awake()
     {
         m_currentSpeed = m_baseSpeed;
-
-
+        m_isShielded = false;
     }
 
     // Update is called once per frame
@@ -39,6 +40,12 @@ public class PlayerMovements : MonoBehaviour
         if(m_speedTimer < 0)
         {
             m_currentSpeed = m_baseSpeed;
+        }
+        
+        m_shieldTimer -=Time.deltaTime;
+        if(m_shieldTimer < 0)
+        {
+            DeactivateShield();
         }
         /*
         var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
@@ -63,14 +70,26 @@ public class PlayerMovements : MonoBehaviour
         m_spriteRenderer.enabled = true;
     }
 
-    internal void AddSpeed(int _speed, float _speedTimer)
+    public void AddSpeed(int _speed, float _speedTimer)
     {
         m_currentSpeed = _speed;
         m_speedTimer += _speedTimer;
     }
 
-    internal void AddShield(int _shieldTimer)
+    public void AddShield(int _shieldTimer)
     {
-        //m_shieldPrefab.DO
+        m_isShielded = true;
+        m_shieldTimer += _shieldTimer;
+        m_shieldPrefab.SetActive(true);
+        m_shieldPrefab.transform.DOScale(2, 1.5f);
     }
+
+    private void DeactivateShield()
+    {   
+        m_isShielded = false;
+        m_shieldPrefab.SetActive(false);
+        m_shieldPrefab.transform.localScale = Vector3.zero;
+    }
+    
+
 }
