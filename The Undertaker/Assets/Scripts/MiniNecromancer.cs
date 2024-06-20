@@ -5,6 +5,7 @@ using UnityEngine;
 public class MiniNecromancer : EnemyBase
 {
     [SerializeField] private float m_timerCount;
+    [SerializeField] private float m_offset = .5f;
     private float m_timer;
 
     private void Start() 
@@ -19,13 +20,15 @@ public class MiniNecromancer : EnemyBase
     }
 
     private void Update() {
+
+        transform.position = Vector2.MoveTowards(m_player.transform.position, transform.position, m_speedOfMovement * Time.deltaTime);
         // Stick to a Corner of the room
 
-        /*m_timer -= Time.deltaTime;
+        m_timer -= Time.deltaTime;
          if(m_timer <= 0 ) {
-             SpawnSlimes(Random.Range(1, 4));
+             SpawnSlimes(Random.Range(1, 3));
              m_timer = m_timerCount;
-         }*/
+         }
 
         if (m_player.transform.position.x > transform.position.x) {
             m_spriteRenderer.flipX = true;
@@ -44,14 +47,24 @@ public class MiniNecromancer : EnemyBase
         gameObject.SetActive(false);
     }
 
-    /*private void SpawnSlimes(int _sizeOfSlime) {
+    private void SpawnSlimes(int _sizeOfSlime) {
         GameObject instanceSplit;
         if (_sizeOfSlime == 3) {
             instanceSplit = m_poolSystem.GetBigSlime();
         }
         else if (_sizeOfSlime == 2) instanceSplit = m_poolSystem.GetMediumSlime();
         else instanceSplit = m_poolSystem.GetSmallSlime();
-        ////
-    }*/
+
+    
+        instanceSplit.transform.position = transform.forward * m_offset ;
+        instanceSplit.SetActive(true);
+        var SplitScript = instanceSplit.GetComponent<EnemyBase>();
+        SplitScript.m_gameManager = m_gameManager;
+        SplitScript.m_poolSystem = m_poolSystem;
+        SplitScript.m_collider2D.enabled = true;
+        var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
+        SplitSlimeScript.m_player = m_gameManager.m_player;
+       
+    }
 
 }
