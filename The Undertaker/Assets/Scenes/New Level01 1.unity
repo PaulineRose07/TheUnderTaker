@@ -557,6 +557,10 @@ PrefabInstance:
       propertyPath: m_player
       value: 
       objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 4579068970813660055, guid: 74e5a653bf5d9b543b5efcbbef8713df, type: 3}
+      propertyPath: m_difficultyLevel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8145307411943326017, guid: 74e5a653bf5d9b543b5efcbbef8713df, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -878,6 +882,18 @@ PrefabInstance:
       propertyPath: m_player
       value: 
       objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 4579068970813660055, guid: 74e5a653bf5d9b543b5efcbbef8713df, type: 3}
+      propertyPath: m_difficultyLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090489508507920541, guid: 74e5a653bf5d9b543b5efcbbef8713df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090401950336915010, guid: 74e5a653bf5d9b543b5efcbbef8713df, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8145307411943326017, guid: 74e5a653bf5d9b543b5efcbbef8713df, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

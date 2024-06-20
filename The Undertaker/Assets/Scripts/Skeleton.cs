@@ -12,6 +12,7 @@ public class Skeleton : EnemyBase
     private float m_timerChangeDirection;
     private float m_fireTimer;
     private float m_timerFlee;
+    private Vector3 m_direction;
 
     private void Start() 
     {
@@ -50,11 +51,8 @@ public class Skeleton : EnemyBase
 
     public override void OnTriggerReaction()
     {
-        Debug.Log("1");
         m_isShooting = false;
-        Debug.Log("2");
         m_timerFlee = m_FleeCount;
-        Debug.Log("3");
     }
 
    
@@ -64,17 +62,16 @@ public class Skeleton : EnemyBase
         m_timerFlee -= Time.deltaTime;
         if(m_timerFlee <= 0)
         {
-            Vector3 randomDirection = new Vector3();
             m_timerChangeDirection -= Time.deltaTime;
             if(m_timerChangeDirection <= 0)
             {
                 float m_directionX = Random.Range(-1f, 1f);
                 float m_directionY = Random.Range(-1f, 1f);
-                randomDirection = new Vector3(m_directionX, m_directionY,0).normalized;
+                m_direction = new Vector3(m_directionX, m_directionY,0).normalized;
 
                 m_timerChangeDirection = m_directionDelay;
             }
-            transform.Translate(randomDirection * m_speedOfMovement, Space.World);
+            transform.Translate(m_speedOfMovement * Time.deltaTime * m_direction, Space.World);
         }
     }
 
