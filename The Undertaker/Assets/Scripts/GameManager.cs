@@ -46,24 +46,28 @@ public class GameManager : MonoBehaviour {
 
     private void FirstChamber(ChamberManager _newChamberManager) {
         m_amountOfSpawns = 0;
-        var previousCam = m_camera;
         m_camera = _newChamberManager.m_camera;
         m_spawnManager = _newChamberManager.m_spawnManager;
         m_doorBehaviour = _newChamberManager.m_doorBehaviour;
         m_directionalLight = _newChamberManager.m_directionalLight;
         m_camera.CameraEnabled();
-        previousCam.CameraDisabled();
+       
     }
-    public void ChangeChambers(ChamberManager _chamberManager)
+    public void InitializeChamber(ChamberManager _chamberManager)
     {
         m_amountOfSpawns = 0;
-        m_camera = _chamberManager.m_camera;
         m_spawnManager = _chamberManager.m_spawnManager;
         m_doorBehaviour = _chamberManager.m_doorBehaviour;
         m_directionalLight = _chamberManager.m_directionalLight;
-        m_camera.CameraEnabled();
     }
 
+    public void SwitchCamera(ChamberManager _chamberManager)
+    {
+        var previousCam = m_camera;
+        m_camera = _chamberManager.m_camera;
+        m_camera.CameraEnabled();
+        previousCam.CameraDisabled();
+    }
     public void ResetWhenEnteringNewRoom()
     {
         m_amountOfSpawns = 0;

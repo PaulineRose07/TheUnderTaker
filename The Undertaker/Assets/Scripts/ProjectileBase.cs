@@ -10,6 +10,7 @@ public abstract class ProjectileBase : MonoBehaviour
     public Collider2D m_collider;
     public AudioSource m_audioSource;
     public List<AudioClip> m_explosionClip;
+    public ParticleSystem m_exlosionParticles;
 
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public abstract class ProjectileBase : MonoBehaviour
         m_collider.enabled = false;
         m_spriteRenderer.enabled = false;
         AudioClip explodingSound = m_explosionClip[Random.Range(0, m_explosionClip.Count)];
+        m_exlosionParticles.Play();
         m_audioSource.PlayOneShot(explodingSound);
         yield return new WaitForSeconds(.2f);
         gameObject.SetActive(false);
