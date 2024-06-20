@@ -16,7 +16,7 @@ public class ChamberManager : MonoBehaviour
     [SerializeField] public CinemachineVirtualCamera m_virtualCamera;
     [SerializeField] public CameraShake m_camera;
     //[SerializeField] public DoorBehaviour m_doorBehaviour;
-    [SerializeField] public Light m_directionalLight;
+    //[SerializeField] public Light m_directionalLight;
     [SerializeField] public List<DoorBehaviour> m_doors;
     [Space(16)]
     [Header("--- Level Information ---")]

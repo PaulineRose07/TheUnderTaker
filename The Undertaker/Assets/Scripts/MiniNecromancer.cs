@@ -36,7 +36,7 @@ public class MiniNecromancer : EnemyBase
 
             m_timerChangeDirection = m_directionDelay;
         }
-        transform.Translate(m_direction * m_speedOfMovement, Space.World);
+        transform.Translate(m_speedOfMovement * Time.deltaTime * m_direction, Space.World);
 
         m_timer -= Time.deltaTime;
          if(m_timer <= 0 ) {

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (m_spawnManager.m_spawnPoints.Count == 0 && m_amountOfSpawns == 0) {
+            Debug.Log("Wesh");
             m_spawnManager.RefreshSpawnPointsSprite();
             foreach (DoorBehaviour door in m_doors)
             {
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour {
         {
             door.LockDoors();
         }
-        m_directionalLight = _newChamberManager.m_directionalLight;
+        //m_directionalLight = _newChamberManager.m_directionalLight;
         m_virtualCamera.Priority = 1;
         m_spawnManager.m_canSpawn = true;
         _newChamberManager.GetComponentInChildren<RoomTrigger>().gameObject.SetActive(false);
@@ -80,7 +81,8 @@ public class GameManager : MonoBehaviour {
         {
             door.LockDoors();
         }
-        m_directionalLight = _chamberManager.m_directionalLight;
+        //m_directionalLight = _chamberManager.m_directionalLight;
+        m_directionalLight.intensity = 0.2f;
         m_spawnManager.m_canSpawn = true;
     }
 
