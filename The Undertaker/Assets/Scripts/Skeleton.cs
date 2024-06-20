@@ -40,18 +40,18 @@ public class Skeleton : EnemyBase
     // Update is called once per frame
     void Update()
     {
-        MoveWhenSeen();
         if (m_player.transform.position.x > transform.position.x) {
             m_spriteRenderer.flipX = true;
         }
         else m_spriteRenderer.flipX = false;
+        ShootWhenHidden();
+        MoveWhenSeen();
     }
 
     public new void OnTriggerReaction()
     {
         m_isShooting = false;
         m_timerFlee = m_FleeCount;
-
     }
 
    
@@ -96,9 +96,14 @@ public class Skeleton : EnemyBase
     {
         var bone = m_poolSystem.GetAvailableBone();
         bone.transform.position = transform.position;
+
+        //bone.transform.LookAt(m_player.transform.position);
         //bone.transform.rotation = transform.rotation;
         bone.SetActive(true);
-        bone.GetComponent<ProjectileBase>().ActivateSpriteRenderer();
+        EnemyProjectileBase boneScript = bone.GetComponent<EnemyProjectileBase>();
+        boneScript.ActivateSpriteRenderer();
+        var direction = m_player.transform.position - bone.transform.position;
+        boneScript.m_direction = direction;
         //AudioClip launchingShovel = m_launchShovel[Random.Range(0, m_launchShovel.Count)];
         //m_audioSource.PlayOneShot(launchingShovel);
     }

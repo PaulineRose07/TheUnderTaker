@@ -339,7 +339,7 @@ MonoBehaviour:
   m_spriteRenderer: {fileID: 6330314121241699395}
   m_speedOfProjectile: 10
   m_damagesToEnemy: 0
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 4321883150035198732}
   m_audioSource: {fileID: 0}
   m_explosionClip: []
   m_exlosionParticles: {fileID: 0}

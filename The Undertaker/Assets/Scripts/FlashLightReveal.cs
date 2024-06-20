@@ -9,6 +9,7 @@ public class FlashLightReveal : MonoBehaviour
         if (collision.gameObject.TryGetComponent<EnemyBase>(out EnemyBase component))
         {
             component.ShowYourself();
+            component.OnTriggerReaction();
         }
         if(collision.gameObject.TryGetComponent<GraveBehavior>(out GraveBehavior behavior))
         {
@@ -21,6 +22,7 @@ public class FlashLightReveal : MonoBehaviour
         if (collision.gameObject.TryGetComponent<EnemyBase>(out EnemyBase component))
         {
             component.HideYourself();
+            component.OnTriggerExitReaction();
         }
         if (collision.gameObject.TryGetComponent<GraveBehavior>(out GraveBehavior behavior))
         {

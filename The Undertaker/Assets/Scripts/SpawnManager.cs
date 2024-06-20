@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] public ChamberManager m_chamberManager;
     [SerializeField] private int m_difficultyLevel;
     [SerializeField] public bool m_canSpawn;
+    [SerializeField] private float m_skeletonOffset = 0.5f;
 
     private void Awake()
     {
@@ -75,7 +76,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        if (m_difficultyLevel == 2-3)
+        if (m_difficultyLevel == 3)
         {
             if (m_addingSpawnCount < m_maximumAmountOfSpawns)
             {
@@ -182,21 +183,21 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnSkeleton()
     {
-        GameObject instanceOfMiniN = m_poolSystem.GetAvailableSkeleton();
+        GameObject instanceOfSkeleton = m_poolSystem.GetAvailableSkeleton();
 
         GameObject randomSpawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
         randomSpawnPoint.GetComponent<GraveBehavior>().ChangeGraveWhenOpen();
         m_spawnPoints.Remove(randomSpawnPoint);
         m_usedSpawnPoints.Add(randomSpawnPoint);
 
-        instanceOfMiniN.transform.position = randomSpawnPoint.transform.position * 0.5f;
-        instanceOfMiniN.SetActive(true);
-        var miniNecromancerBase = instanceOfMiniN.GetComponent<EnemyBase>();
-        miniNecromancerBase.m_gameManager = m_gameManager;
-        miniNecromancerBase.m_poolSystem = m_poolSystem;
-        miniNecromancerBase.m_collider2D.enabled = true;
-        var miniNecromancerScript = instanceOfMiniN.GetComponent<MiniNecromancer>();
-        miniNecromancerScript.m_player = m_gameManager.m_player;
+        instanceOfSkeleton.transform.position = randomSpawnPoint.transform.position * m_skeletonOffset;
+        instanceOfSkeleton.SetActive(true);
+        var SkeletonBase = instanceOfSkeleton.GetComponent<EnemyBase>();
+        SkeletonBase.m_gameManager = m_gameManager;
+        SkeletonBase.m_poolSystem = m_poolSystem;
+        SkeletonBase.m_collider2D.enabled = true;
+        var SkeletonScript = instanceOfSkeleton.GetComponent<Skeleton>();
+        SkeletonScript.m_player = m_gameManager.m_player;
 
     }
 
