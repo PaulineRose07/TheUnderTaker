@@ -20,6 +20,8 @@ public class HeroWeaponBase : ProjectileBase
             enemyBase.m_lives -= m_damagesToEnemy;
             enemyBase.TouchedByHeroProjectile();
         }
+        if (collision.gameObject.layer == 15)
+            return;
         BulletTouchedSomething();
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771022405439955181}
   - component: {fileID: 3988437985820632458}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Speed Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3033271674508657570}
   - component: {fileID: 6729928454533197963}
   - component: {fileID: 243032609364393396}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Potion Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

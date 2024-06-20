@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5523079592196731998}
   - component: {fileID: 8389125973218459544}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Shield Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1337557630911070458}
   - component: {fileID: 2984840225073720005}
   - component: {fileID: 2266674990874525483}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Potion Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}

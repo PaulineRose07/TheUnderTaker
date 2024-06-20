@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9012490905893931745}
   - component: {fileID: 673343331149910477}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Heal Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3283397578528148203}
   - component: {fileID: 8809955363678717603}
   - component: {fileID: 1721854208415402314}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Potion Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
