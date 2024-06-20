@@ -607,6 +607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3645d3ff1d89e4940bf82b49e024a089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2119420813 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5712944723732114737, guid: db711822bc02ff44f82b57c83995af58, type: 3}
+  m_PrefabInstance: {fileID: 707752850440054264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &707752850440054264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,17 +621,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1379554385931284174, guid: db711822bc02ff44f82b57c83995af58, type: 3}
-      propertyPath: m_healPrefab
+      propertyPath: m_miniNTransfom
       value: 
-      objectReference: {fileID: 4794091155597294380, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      objectReference: {fileID: 2119420813}
     - target: {fileID: 1379554385931284174, guid: db711822bc02ff44f82b57c83995af58, type: 3}
-      propertyPath: m_speedPrefab
+      propertyPath: m_miniNecromancerPrefab
       value: 
-      objectReference: {fileID: 7633391567629971644, guid: 0471b38be1fdec64ca32993e1601c9f1, type: 3}
-    - target: {fileID: 1379554385931284174, guid: db711822bc02ff44f82b57c83995af58, type: 3}
-      propertyPath: m_shieldPrefab
-      value: 
-      objectReference: {fileID: 2532241660701036410, guid: 3fb2f0e40d766b441940476c2c65a12c, type: 3}
+      objectReference: {fileID: 71494930168609826, guid: ab3f0dcbc178975488de1faec8f693f8, type: 3}
     - target: {fileID: 3810057868954576944, guid: db711822bc02ff44f82b57c83995af58, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

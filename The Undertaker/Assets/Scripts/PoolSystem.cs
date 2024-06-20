@@ -25,6 +25,12 @@ public class PoolSystem : MonoBehaviour
     [SerializeField] Transform m_shovelTransfom;
     [SerializeField] public List<GameObject> m_poolOfShovels = new List<GameObject>();
 
+    [Header("--- Mini Necromancer ---")]
+    [SerializeField] GameObject m_miniNecromancerPrefab;
+    [SerializeField] public int m_nbOfMiniN = 2;
+    [SerializeField] Transform m_miniNTransfom;
+    [SerializeField] public List<GameObject> m_poolOfMiniN = new List<GameObject>();
+
     [Header("--- Items ---")]
     [SerializeField] GameObject m_healPrefab;
     [SerializeField] GameObject m_speedPrefab;
@@ -56,6 +62,8 @@ public class PoolSystem : MonoBehaviour
         CreateInstances(m_nbOfPotions, m_poolOfSpeedPotions, m_speedPrefab, m_speedTransform);
         // Heal Potion
         CreateInstances(m_nbOfPotions, m_poolOfHealPotions, m_healPrefab, m_healTransform);
+        // Mini Necromancer
+        CreateInstances(m_nbOfMiniN, m_poolOfMiniN, m_miniNecromancerPrefab, m_miniNTransfom);
     }
 
 
@@ -69,6 +77,18 @@ public class PoolSystem : MonoBehaviour
         }
     }
 
+    public GameObject GetAvailableNecromancer()
+    {
+        for (int i = 0; i < m_poolOfMiniN.Count; i++)
+        {
+            if (m_poolOfMiniN[i].activeSelf == false) return m_poolOfMiniN[i];
+        }
+
+        GameObject instanceSomething = Instantiate(m_miniNecromancerPrefab, m_miniNTransfom);
+        instanceSomething.SetActive(false);
+        m_poolOfMiniN.Add(instanceSomething);
+        return instanceSomething;
+    }
     public GameObject GetAvailableShovel()
     {
         for (int i = 0; i < m_poolOfShovels.Count; i++)

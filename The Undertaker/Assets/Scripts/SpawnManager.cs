@@ -62,7 +62,7 @@ public class SpawnManager : MonoBehaviour
                     if(methodSelected == 1)
                     {
                         SpawnMiniNecromancer();
-                        //m_gameManager.m_amountOfSpawns++;
+                        m_gameManager.m_amountOfSpawns++;
                     }    
                     m_timerSlime = m_delayerSlimeSpawn;
                 }
@@ -98,33 +98,24 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnMiniNecromancer()
     {
-        Debug.Log("Mini Necromancer");
-    }
-    /*private void SpawnBigSlime() 
-    {
-        GameObject instanceSplit = m_poolSystem.GetBigSlime();
-        instanceSplit.transform.position = Random.insideUnitCircle * m_spawnRadius;
-        instanceSplit.SetActive(true);
-        var SplitScript = instanceSplit.GetComponent<EnemyBase>();
+        GameObject instanceOfMiniN = m_poolSystem.GetAvailableNecromancer();
+
+        GameObject randomSpawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
+        randomSpawnPoint.GetComponent<GraveBehavior>().ChangeGraveWhenOpen();
+        m_spawnPoints.Remove(randomSpawnPoint);
+        m_usedSpawnPoints.Add(randomSpawnPoint);
+
+        instanceOfMiniN.transform.position = randomSpawnPoint.transform.position;
+        instanceOfMiniN.SetActive(true);
+        var SplitScript = instanceOfMiniN.GetComponent<EnemyBase>();
         SplitScript.m_gameManager = m_gameManager;
         SplitScript.m_poolSystem = m_poolSystem;
-        var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
+        SplitScript.m_collider2D.enabled = true;
+        var SplitSlimeScript = instanceOfMiniN.GetComponent<MiniNecromancer>();
         SplitSlimeScript.m_player = m_gameManager.m_player;
-    }
-    private void SpawnMediumSlime()
-    {
-        GameObject instanceSplit = m_poolSystem.GetMediumSlime();
-        instanceSplit.transform.position = Random.insideUnitCircle * m_spawnRadius;
-        instanceSplit.SetActive(true);
-        
-    }
 
-    private void SpawnSmallSlime()
-    {
-        GameObject instanceSplit = m_poolSystem.GetSmallSlime();
-        instanceSplit.transform.position = Random.insideUnitCircle * m_spawnRadius;
-        instanceSplit.SetActive(true);
-    }*/
+        Debug.Log("Mini Necromancer");
+    }
 
     public void RefreshSpawnPointsSprite()
     {
