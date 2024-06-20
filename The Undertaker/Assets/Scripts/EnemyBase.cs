@@ -30,6 +30,16 @@ public abstract class EnemyBase : MonoBehaviour
 
     }
 
+    public void OnTriggerReaction()
+    {
+
+    }
+
+    public void OnTriggerExitReaction()
+    {
+
+    }
+
     abstract public void TouchedByHeroProjectile();
 
     public void ShowYourself()
@@ -52,4 +62,6 @@ public abstract class EnemyBase : MonoBehaviour
         if (m_difficulty >= 1 && dropChance >= 7)
             m_spawnManager.SpawnHealthPotion(transform.position);
     }
+
+    
 }

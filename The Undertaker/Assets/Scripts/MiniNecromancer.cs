@@ -19,7 +19,8 @@ public class MiniNecromancer : EnemyBase
         }
     }
 
-    private void Update() {
+    private void Update() 
+    {
 
         transform.position = Vector2.MoveTowards(m_player.transform.position, transform.position, m_speedOfMovement * Time.deltaTime);
         // Stick to a Corner of the room
