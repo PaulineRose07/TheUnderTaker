@@ -190,7 +190,7 @@ public class SpawnManager : MonoBehaviour
         m_spawnPoints.Remove(randomSpawnPoint);
         m_usedSpawnPoints.Add(randomSpawnPoint);
 
-        instanceOfSkeleton.transform.position = randomSpawnPoint.transform.position * m_skeletonOffset;
+        instanceOfSkeleton.transform.position = randomSpawnPoint.transform.position;
         instanceOfSkeleton.SetActive(true);
         var SkeletonBase = instanceOfSkeleton.GetComponent<EnemyBase>();
         SkeletonBase.m_gameManager = m_gameManager;

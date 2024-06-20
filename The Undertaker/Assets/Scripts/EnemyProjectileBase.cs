@@ -32,6 +32,8 @@ public class EnemyProjectileBase : ProjectileBase
         {
             m_gameManager.DecreaseLives(m_damagesToEnemy);
         }
+        if (collision.gameObject.layer == 9)
+            return;
         BulletTouchedSomething();
     }
 }
