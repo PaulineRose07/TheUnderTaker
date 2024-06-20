@@ -31,6 +31,19 @@ public class PoolSystem : MonoBehaviour
     [SerializeField] Transform m_miniNTransfom;
     [SerializeField] public List<GameObject> m_poolOfMiniN = new List<GameObject>();
 
+
+    [Header("--- Skeleton ---")]
+    [SerializeField] GameObject m_skeletonPrefab;
+    [SerializeField] public int m_nbOfSkeleton = 2;
+    [SerializeField] Transform m_SkeletonTransfom;
+    [SerializeField] public List<GameObject> m_poolOfSkeleton = new List<GameObject>();
+    [Header("--- Bone ---")]
+    [SerializeField] GameObject m_bonePrefab;
+    [SerializeField] public int m_nbOfBone = 2;
+    [SerializeField] Transform m_BoneTransfom;
+    [SerializeField] public List<GameObject> m_poolOfBone = new List<GameObject>();
+
+
     [Header("--- Items ---")]
     [SerializeField] GameObject m_healPrefab;
     [SerializeField] GameObject m_speedPrefab;
@@ -64,6 +77,10 @@ public class PoolSystem : MonoBehaviour
         CreateInstances(m_nbOfPotions, m_poolOfHealPotions, m_healPrefab, m_healTransform);
         // Mini Necromancer
         CreateInstances(m_nbOfMiniN, m_poolOfMiniN, m_miniNecromancerPrefab, m_miniNTransfom);
+        // Skeleton
+        CreateInstances(m_nbOfSkeleton, m_poolOfSkeleton, m_skeletonPrefab, m_SkeletonTransfom);
+        // Bones
+        CreateInstances(m_nbOfBone, m_poolOfBone, m_bonePrefab, m_BoneTransfom);
     }
 
 
@@ -77,6 +94,30 @@ public class PoolSystem : MonoBehaviour
         }
     }
 
+    public GameObject GetAvailableBone()
+    {
+        for (int i = 0; i < m_poolOfBone.Count; i++)
+        {
+            if (m_poolOfBone[i].activeSelf == false) return m_poolOfBone[i];
+        }
+
+        GameObject instanceSomething = Instantiate(m_bonePrefab, m_BoneTransfom);
+        instanceSomething.SetActive(false);
+        m_poolOfBone.Add(instanceSomething);
+        return instanceSomething;
+    }
+    public GameObject GetAvailableSkeleton()
+    {
+        for (int i = 0; i < m_poolOfSkeleton.Count; i++)
+        {
+            if (m_poolOfSkeleton[i].activeSelf == false) return m_poolOfSkeleton[i];
+        }
+
+        GameObject instanceSomething = Instantiate(m_skeletonPrefab, m_SkeletonTransfom);
+        instanceSomething.SetActive(false);
+        m_poolOfSkeleton.Add(instanceSomething);
+        return instanceSomething;
+    }
     public GameObject GetAvailableNecromancer()
     {
         for (int i = 0; i < m_poolOfMiniN.Count; i++)

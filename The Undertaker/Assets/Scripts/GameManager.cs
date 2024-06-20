@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour {
             //add here that the bool for the visited chamber is now true
             m_directionalLight.intensity = .5f;
         }
+
+        if(m_currentLives <= 0)
+        {
+            m_uiManager.GameOverOverlayOpen();
+        }
     }
 
     private void InitializeFirstChamber(ChamberManager _newChamberManager) {

@@ -94,12 +94,12 @@ public class Skeleton : EnemyBase
 
     private void ThrowABone()
     {
-        /*var shovel = m_poolSystem.GetAvailableShovel();
-        shovel.transform.position = transform.position;
-        shovel.transform.rotation = transform.rotation;
-        shovel.SetActive(true);
-        shovel.GetComponent<ProjectileBase>().ActivateSpriteRenderer();
-        AudioClip launchingShovel = m_launchShovel[Random.Range(0, m_launchShovel.Count)];
-        m_audioSource.PlayOneShot(launchingShovel);*/
+        var bone = m_poolSystem.GetAvailableBone();
+        bone.transform.position = transform.position;
+        //bone.transform.rotation = transform.rotation;
+        bone.SetActive(true);
+        bone.GetComponent<ProjectileBase>().ActivateSpriteRenderer();
+        //AudioClip launchingShovel = m_launchShovel[Random.Range(0, m_launchShovel.Count)];
+        //m_audioSource.PlayOneShot(launchingShovel);
     }
 }
