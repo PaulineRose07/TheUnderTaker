@@ -184,13 +184,13 @@ MonoBehaviour:
   m_damagesToPlayer: 1
   m_lives: 3
   m_pointsToScore: 0
-  m_speedOfMovement: 2.5
+  m_speedOfMovement: 4
   m_spriteRenderer: {fileID: 1456607995229612814}
   m_collider2D: {fileID: 6680807126061456094}
   m_difficulty: 0
   m_audioSource: {fileID: 7381057480290181842}
   m_clipListExplosion: []
-  m_FleeCount: 2
+  m_FleeCount: 0.5
   m_fireDelay: 2
   m_isShooting: 0
   m_directionDelay: 1
