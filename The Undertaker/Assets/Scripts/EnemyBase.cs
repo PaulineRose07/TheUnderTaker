@@ -30,6 +30,12 @@ public abstract class EnemyBase : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer == 7)
+            m_gameManager.DecreaseLives(m_damagesToPlayer);
+    }
+
     public virtual void OnTriggerReaction()
     {
 

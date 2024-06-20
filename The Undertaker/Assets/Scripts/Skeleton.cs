@@ -78,7 +78,7 @@ public class Skeleton : EnemyBase
     public override void OnTriggerExitReaction()
     {
         m_isShooting = true;
-        
+        m_fireTimer = m_fireDelay;
     }
 
     private void ShootWhenHidden()
@@ -102,6 +102,7 @@ public class Skeleton : EnemyBase
         bone.SetActive(true);
         EnemyProjectileBase boneScript = bone.GetComponent<EnemyProjectileBase>();
         boneScript.ActivateSpriteRenderer();
+        boneScript.m_gameManager = m_gameManager;
         var direction = m_player.transform.position - bone.transform.position;
         boneScript.m_direction = direction;
         //AudioClip launchingShovel = m_launchShovel[Random.Range(0, m_launchShovel.Count)];

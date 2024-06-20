@@ -6,6 +6,7 @@ public class EnemyProjectileBase : ProjectileBase
 {
     [SerializeField] private float m_rotationZ = 45;
     [SerializeField] public Vector3 m_direction;
+    public GameManager m_gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +26,12 @@ public class EnemyProjectileBase : ProjectileBase
         transform.Rotate(0,0,m_rotationZ *  Time.deltaTime);
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 7)
+        {
+            m_gameManager.DecreaseLives(m_damagesToEnemy);
+        }
+        BulletTouchedSomething();
+    }
 }

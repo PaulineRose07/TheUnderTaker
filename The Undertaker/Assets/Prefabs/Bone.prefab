@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9161495309208730099}
   - component: {fileID: 6579119583747955697}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7281429020198887968}
   - component: {fileID: 4433973097584094954}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 2709118017068476626}
   - component: {fileID: 8620246755326086147}
   - component: {fileID: 4321883150035198732}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,13 +337,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spriteRenderer: {fileID: 6330314121241699395}
-  m_speedOfProjectile: 10
-  m_damagesToEnemy: 0
+  m_speedOfProjectile: 2
+  m_damagesToEnemy: 1
   m_collider: {fileID: 4321883150035198732}
   m_audioSource: {fileID: 0}
   m_explosionClip: []
   m_exlosionParticles: {fileID: 0}
   m_rotationZ: 200
+  m_direction: {x: 0, y: 0, z: 0}
+  m_gameManager: {fileID: 0}
 --- !u!61 &4321883150035198732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -359,7 +361,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -373,7 +375,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -399,7 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4145214264565481779}
   - component: {fileID: 6330314121241699395}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
