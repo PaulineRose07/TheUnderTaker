@@ -6,7 +6,7 @@ using Cinemachine;
 public class CameraShake : MonoBehaviour
 {
     private CinemachineVirtualCamera m_cinemachineVirtualCamera;
-    private float m_shakeTimer;
+    [SerializeField] private float m_shakeTimer;
     // Start is called before the first frame update
     private void Awake()
     {

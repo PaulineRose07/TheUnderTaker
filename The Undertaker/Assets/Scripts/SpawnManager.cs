@@ -16,8 +16,12 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] public int m_addingSpawnCount;
     [SerializeField] public ChamberManager m_chamberManager;
     [SerializeField] private int m_difficultyLevel;
+    [SerializeField] public bool m_canSpawn;
 
-
+    private void Awake()
+    {
+        m_canSpawn = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +30,13 @@ public class SpawnManager : MonoBehaviour
         m_timerSlime = m_chamberManager.m_timerForSpawn;
         m_maximumAmountOfSpawns = m_chamberManager.m_maxSpawnOfEnemies;
         m_difficultyLevel = m_chamberManager.m_difficultyLevel;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!m_canSpawn) return;
         if (m_difficultyLevel == 0) return;
         if (m_difficultyLevel == 1)
         {

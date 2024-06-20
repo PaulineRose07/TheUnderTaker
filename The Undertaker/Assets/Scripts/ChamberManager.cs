@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class ChamberManager : MonoBehaviour
     [Space(16)]
     [Header("--- Inside Chamber links ---")]
     [SerializeField] public SpawnManager m_spawnManager;
+    [SerializeField] public CinemachineVirtualCamera m_virtualCamera;
     [SerializeField] public CameraShake m_camera;
     [SerializeField] public DoorBehaviour m_doorBehaviour;
     [SerializeField] public Light m_directionalLight;

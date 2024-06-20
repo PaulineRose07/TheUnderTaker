@@ -366,6 +366,7 @@ MonoBehaviour:
   m_poolSystem: {fileID: 0}
   m_player: {fileID: 0}
   m_spawnManager: {fileID: 338965800265988914}
+  m_virtualCamera: {fileID: 8460399918633776165}
   m_camera: {fileID: 6121419253666864274}
   m_doorBehaviour: {fileID: 8029249571912338496}
   m_directionalLight: {fileID: 4870093179528602928}
@@ -578,7 +579,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -622,7 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6701037552242262730}
-  - component: {fileID: 8823951155101844434}
+  - component: {fileID: 3334755119355525663}
   - component: {fileID: 2962139841543149510}
   - component: {fileID: 4312717482248388041}
   - component: {fileID: 4536381291274882688}
@@ -649,7 +650,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8145307411943326017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8823951155101844434
+--- !u!114 &3334755119355525663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -658,7 +659,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4271041947525306200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb72bb320c714144e84e2b137ac6c836, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d03edc573206b04f9c8e985340c080b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_doors: {fileID: 8029249571912338496}
@@ -905,6 +906,7 @@ MonoBehaviour:
   m_addingSpawnCount: 0
   m_chamberManager: {fileID: 4579068970813660055}
   m_difficultyLevel: 0
+  m_canSpawn: 0
 --- !u!1 &6223129319746400279
 GameObject:
   m_ObjectHideFlags: 0
