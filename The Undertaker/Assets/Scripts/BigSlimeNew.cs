@@ -31,6 +31,8 @@ public class BigSlimeNew : EnemyBase
 
     IEnumerator EnemyDeath()
     {
+        if (m_sizeOfSlime == 1)
+            LootOnDeath();
         m_gameManager.UpdateScore(m_pointsToScore);
         m_gameManager.m_amountOfSpawns--;
         AudioClip explosionClip = m_clipListExplosion[Random.Range(0,m_clipListExplosion.Count)];
@@ -66,6 +68,7 @@ public class BigSlimeNew : EnemyBase
         var SplitScript = _instance.GetComponent<EnemyBase>();
         SplitScript.m_gameManager = m_gameManager;
         SplitScript.m_poolSystem = m_poolSystem;
+        SplitScript.m_spawnManager = m_spawnManager;
         SplitScript.m_collider2D.enabled = true;
         var SplitSlimeScript = _instance.GetComponent<BigSlimeNew>();
         SplitSlimeScript.m_player = m_gameManager.m_player;

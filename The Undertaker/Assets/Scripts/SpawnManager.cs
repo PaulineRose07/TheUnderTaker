@@ -16,8 +16,12 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] public int m_addingSpawnCount;
     [SerializeField] public ChamberManager m_chamberManager;
     [SerializeField] private int m_difficultyLevel;
+    [SerializeField] public bool m_canSpawn;
 
-
+    private void Awake()
+    {
+        m_canSpawn = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +30,13 @@ public class SpawnManager : MonoBehaviour
         m_timerSlime = m_chamberManager.m_timerForSpawn;
         m_maximumAmountOfSpawns = m_chamberManager.m_maxSpawnOfEnemies;
         m_difficultyLevel = m_chamberManager.m_difficultyLevel;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!m_canSpawn) return;
         if (m_difficultyLevel == 0) return;
         if (m_difficultyLevel == 1)
         {
@@ -62,7 +68,7 @@ public class SpawnManager : MonoBehaviour
                     if(methodSelected == 1)
                     {
                         SpawnMiniNecromancer();
-                        //m_gameManager.m_amountOfSpawns++;
+                        m_gameManager.m_amountOfSpawns++;
                     }    
                     m_timerSlime = m_delayerSlimeSpawn;
                 }
@@ -91,40 +97,60 @@ public class SpawnManager : MonoBehaviour
         var SplitScript = instanceSplit.GetComponent<EnemyBase>();
         SplitScript.m_gameManager = m_gameManager;
         SplitScript.m_poolSystem = m_poolSystem;
+        SplitScript.m_spawnManager = this;
         SplitScript.m_collider2D.enabled = true;
         var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
         SplitSlimeScript.m_player = m_gameManager.m_player;
     }
 
-    private void SpawnMiniNecromancer()
+    public void SpawnHealthPotion(Vector3 _position)
     {
-        Debug.Log("Mini Necromancer");
-    }
-    /*private void SpawnBigSlime() 
-    {
-        GameObject instanceSplit = m_poolSystem.GetBigSlime();
-        instanceSplit.transform.position = Random.insideUnitCircle * m_spawnRadius;
-        instanceSplit.SetActive(true);
-        var SplitScript = instanceSplit.GetComponent<EnemyBase>();
-        SplitScript.m_gameManager = m_gameManager;
-        SplitScript.m_poolSystem = m_poolSystem;
-        var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
-        SplitSlimeScript.m_player = m_gameManager.m_player;
-    }
-    private void SpawnMediumSlime()
-    {
-        GameObject instanceSplit = m_poolSystem.GetMediumSlime();
-        instanceSplit.transform.position = Random.insideUnitCircle * m_spawnRadius;
-        instanceSplit.SetActive(true);
-        
+        GameObject instanceSplit = m_poolSystem.GetHealingPotion();
+        PotionsDropping(instanceSplit, _position);
     }
 
-    private void SpawnSmallSlime()
+    public void SpawnSpeedPotion(Vector3 _position)
     {
-        GameObject instanceSplit = m_poolSystem.GetSmallSlime();
-        instanceSplit.transform.position = Random.insideUnitCircle * m_spawnRadius;
-        instanceSplit.SetActive(true);
-    }*/
+        GameObject instanceSplit = m_poolSystem.GetSpeedPotion();
+        PotionsDropping(instanceSplit, _position);
+    }
+
+    public void SpawnShieldPotion(Vector3 _position)
+    {
+        GameObject instanceSplit = m_poolSystem.GetShieldPotion();
+        PotionsDropping(instanceSplit, _position);
+      
+    }
+
+    public void PotionsDropping(GameObject _potion, Vector3 _position)
+    {
+        _potion.transform.position = _position;
+        _potion.SetActive(true);
+        var SplitScript = _potion.GetComponent<PotionBase>();
+        SplitScript.m_gameManager = m_gameManager;
+        SplitScript.m_player = m_gameManager.m_player;
+    }
+
+    private void SpawnMiniNecromancer()
+    {
+        GameObject instanceOfMiniN = m_poolSystem.GetAvailableNecromancer();
+
+        GameObject randomSpawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
+        randomSpawnPoint.GetComponent<GraveBehavior>().ChangeGraveWhenOpen();
+        m_spawnPoints.Remove(randomSpawnPoint);
+        m_usedSpawnPoints.Add(randomSpawnPoint);
+
+        instanceOfMiniN.transform.position = randomSpawnPoint.transform.position;
+        instanceOfMiniN.SetActive(true);
+        var SplitScript = instanceOfMiniN.GetComponent<EnemyBase>();
+        SplitScript.m_gameManager = m_gameManager;
+        SplitScript.m_poolSystem = m_poolSystem;
+        SplitScript.m_collider2D.enabled = true;
+        var SplitSlimeScript = instanceOfMiniN.GetComponent<MiniNecromancer>();
+        SplitSlimeScript.m_player = m_gameManager.m_player;
+
+        Debug.Log("Mini Necromancer");
+    }
 
     public void RefreshSpawnPointsSprite()
     {
