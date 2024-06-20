@@ -97,9 +97,38 @@ public class SpawnManager : MonoBehaviour
         var SplitScript = instanceSplit.GetComponent<EnemyBase>();
         SplitScript.m_gameManager = m_gameManager;
         SplitScript.m_poolSystem = m_poolSystem;
+        SplitScript.m_spawnManager = this;
         SplitScript.m_collider2D.enabled = true;
         var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
         SplitSlimeScript.m_player = m_gameManager.m_player;
+    }
+
+    public void SpawnHealthPotion(Vector3 _position)
+    {
+        GameObject instanceSplit = m_poolSystem.GetHealingPotion();
+        PotionsDropping(instanceSplit, _position);
+    }
+
+    public void SpawnSpeedPotion(Vector3 _position)
+    {
+        GameObject instanceSplit = m_poolSystem.GetSpeedPotion();
+        PotionsDropping(instanceSplit, _position);
+    }
+
+    public void SpawnShieldPotion(Vector3 _position)
+    {
+        GameObject instanceSplit = m_poolSystem.GetShieldPotion();
+        PotionsDropping(instanceSplit, _position);
+      
+    }
+
+    public void PotionsDropping(GameObject _potion, Vector3 _position)
+    {
+        _potion.transform.position = _position;
+        _potion.SetActive(true);
+        var SplitScript = _potion.GetComponent<PotionBase>();
+        SplitScript.m_gameManager = m_gameManager;
+        SplitScript.m_player = m_gameManager.m_player;
     }
 
     private void SpawnMiniNecromancer()
