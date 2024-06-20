@@ -21,11 +21,27 @@ public class Skeleton : EnemyBase
     }
 
     public override void TouchedByHeroProjectile() {
-        if (m_lives <= 0) {
+        if (m_lives <= 0)
+        {
             StartCoroutine(EnemyDeath());
         }
-    }
+        else 
+        {
+            StartCoroutine(BlinkWhenHurt());
 
+        }
+
+    }
+    IEnumerator BlinkWhenHurt()
+    {
+        var originColor = m_spriteRenderer.color;
+        m_spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.color = originColor;
+        m_spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.color = originColor;
+    }
     IEnumerator EnemyDeath() {
         m_gameManager.UpdateScore(m_pointsToScore);
         m_gameManager.m_amountOfSpawns--;
