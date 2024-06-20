@@ -31,6 +31,7 @@ public class Skeleton : EnemyBase
         m_gameManager.m_amountOfSpawns--;
         //AudioClip explosionClip = m_clipListExplosion[Random.Range(0, m_clipListExplosion.Count)];
         //m_audioSource.PlayOneShot(explosionClip);
+        m_explodingParticles.Play();
         m_collider2D.enabled = false;
         m_spriteRenderer.enabled = false;
         yield return new WaitForSeconds(0.5f);

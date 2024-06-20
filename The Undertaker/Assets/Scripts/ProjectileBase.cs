@@ -29,9 +29,10 @@ public abstract class ProjectileBase : MonoBehaviour
     {
         m_collider.enabled = false;
         m_spriteRenderer.enabled = false;
+        m_exlosionParticles.Play();
         /*
         AudioClip explodingSound = m_explosionClip[Random.Range(0, m_explosionClip.Count)];
-        m_exlosionParticles.Play();
+       
         m_audioSource.PlayOneShot(explodingSound);
         */
         yield return new WaitForSeconds(.2f);

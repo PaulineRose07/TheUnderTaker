@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6319834080815232068}
   - component: {fileID: 2231389988315325098}
   m_Layer: 8
-  m_Name: Particle System
+  m_Name: Explosion Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,9 +111,9 @@ Transform:
   m_GameObject: {fileID: 2210506222273144520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.267, z: 0}
+  m_LocalPosition: {x: 0, y: 0.434, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7048526965688788389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,14 +125,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2210506222273144520}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -835,7 +835,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.27
+      value: 0.13
       mode: 0
       spread: 0
       speed:
@@ -1392,7 +1392,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.80494696, g: 1, b: 0.504717, a: 1}
+        key0: {r: 0.5058824, g: 1, b: 0.82421124, a: 1}
         key1: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -4889,7 +4889,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 9.85
+  m_LengthScale: 7.68
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
