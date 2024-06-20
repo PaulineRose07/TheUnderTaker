@@ -27,7 +27,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 7)
+        if (collision.gameObject.TryGetComponent<PlayerMovements>(out PlayerMovements component))
         {
             m_gameManager.DecreaseLives(m_damagesToPlayer);
         }
@@ -36,7 +36,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.layer == 7)
+        if (collision.gameObject.TryGetComponent<PlayerMovements>(out PlayerMovements component))
             m_gameManager.DecreaseLives(m_damagesToPlayer);
     }
 

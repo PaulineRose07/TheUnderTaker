@@ -5111,7 +5111,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.07703406, g: 0.08030043, b: 0.11949676, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -25454,6 +25454,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5191973181989744056, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f011478ae98d1446a5aaf4c0fd66dd2, type: 3}
+    - target: {fileID: 6177240803248289466, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_overallMusic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6593638422010115938, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
       propertyPath: m_Name
       value: MusicManager
