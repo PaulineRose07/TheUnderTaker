@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 0}
+  m_spawnManager: {fileID: 0}
   m_poolSystem: {fileID: 0}
   m_player: {fileID: 0}
   m_damagesToPlayer: 1
@@ -56,11 +57,11 @@ MonoBehaviour:
   m_speedOfMovement: 0.5
   m_spriteRenderer: {fileID: 3552364352864797253}
   m_collider2D: {fileID: 391636547062358254}
+  m_difficulty: 2
   m_audioSource: {fileID: 4591592934792650375}
   m_clipListExplosion:
   - {fileID: 8300000, guid: 005884d5d5511e64994300ad7b9de3ef, type: 3}
   - {fileID: 8300000, guid: 44b7d79b8420461458c199821fd7113d, type: 3}
-  m_movingAudioClip: {fileID: 8300000, guid: b625e590f2d673d4a9cfc1aa09ff9b75, type: 3}
   m_sizeOfSlime: 3
 --- !u!58 &391636547062358254
 CircleCollider2D:

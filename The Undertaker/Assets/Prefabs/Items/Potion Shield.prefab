@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1337557630911070458}
   - component: {fileID: -7503127235243097118}
-  - component: {fileID: -5900173692504737253}
   m_Layer: 0
   m_Name: Potion Shield
   m_TagString: Untagged
@@ -132,19 +131,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
   m_gameManager: {fileID: 0}
---- !u!114 &-5900173692504737253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2532241660701036410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f51a9a9b1ee3c644b9007f840e62c63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
-  m_gameManager: {fileID: 0}
-  m_speed: 1
-  m_speedTimer: 15
