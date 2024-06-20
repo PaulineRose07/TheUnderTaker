@@ -15,9 +15,10 @@ public class GameManager : MonoBehaviour {
     [Header("--- Chamber Links ---")]
     [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
     [SerializeField] private CameraShake m_camera;
-    [SerializeField] private SpawnManager m_spawnManager;
-    [SerializeField] private DoorBehaviour m_doorBehaviour;
+    //[SerializeField] private DoorBehaviour m_doorBehaviour;
     [SerializeField] private Light m_directionalLight;
+    [SerializeField] private SpawnManager m_spawnManager;
+    [SerializeField] private List<DoorBehaviour> m_doors;
     [Space(8)]
     [SerializeField] public int m_amountOfSpawns;
     [SerializeField] public List<ChamberManager> m_chamberManagers;
@@ -40,7 +41,10 @@ public class GameManager : MonoBehaviour {
     void Update() {
         if (m_spawnManager.m_spawnPoints.Count == 0 && m_amountOfSpawns == 0) {
             m_spawnManager.RefreshSpawnPointsSprite();
-            m_doorBehaviour.UnlockDoor();
+            foreach (DoorBehaviour door in m_doors)
+            {
+                door.UnlockDoor();
+            }
             //add here that the bool for the visited chamber is now true
             m_directionalLight.intensity = .5f;
         }
@@ -50,17 +54,27 @@ public class GameManager : MonoBehaviour {
         m_amountOfSpawns = 0;
         m_virtualCamera = _newChamberManager.m_virtualCamera;
         m_spawnManager = _newChamberManager.m_spawnManager;
-        m_doorBehaviour = _newChamberManager.m_doorBehaviour;
+        //m_doorBehaviour = _newChamberManager.m_doorBehaviour;
+        m_doors = _newChamberManager.m_doors;
+        foreach(DoorBehaviour door in m_doors)
+        {
+            door.LockDoors();
+        }
         m_directionalLight = _newChamberManager.m_directionalLight;
         m_virtualCamera.Priority = 1;
         m_spawnManager.m_canSpawn = true;
-
+        _newChamberManager.GetComponentInChildren<RoomTrigger>().gameObject.SetActive(false);
     }
     public void InitializeChamber(ChamberManager _chamberManager)
     {
         m_amountOfSpawns = 0;
         m_spawnManager = _chamberManager.m_spawnManager;
-        m_doorBehaviour = _chamberManager.m_doorBehaviour;
+        //m_doorBehaviour = _chamberManager.m_doorBehaviour;
+        m_doors = _chamberManager.m_doors;
+        foreach (DoorBehaviour door in m_doors)
+        {
+            door.LockDoors();
+        }
         m_directionalLight = _chamberManager.m_directionalLight;
         m_spawnManager.m_canSpawn = true;
     }

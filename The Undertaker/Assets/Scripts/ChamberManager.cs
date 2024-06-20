@@ -15,8 +15,9 @@ public class ChamberManager : MonoBehaviour
     [SerializeField] public SpawnManager m_spawnManager;
     [SerializeField] public CinemachineVirtualCamera m_virtualCamera;
     [SerializeField] public CameraShake m_camera;
-    [SerializeField] public DoorBehaviour m_doorBehaviour;
+    //[SerializeField] public DoorBehaviour m_doorBehaviour;
     [SerializeField] public Light m_directionalLight;
+    [SerializeField] public List<DoorBehaviour> m_doors;
     [Space(16)]
     [Header("--- Level Information ---")]
     [SerializeField] public int m_maxSpawnOfEnemies;
