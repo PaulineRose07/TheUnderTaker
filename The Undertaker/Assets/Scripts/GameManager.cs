@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour {
 
     public void IncreaseLives(int _lives)
     {
+        if (m_currentLives >= m_player.GetComponent<PlayerInformation>().m_maxLives) return;
         m_currentLives += _lives;
         m_healthBar.ChangeHealthBar(_lives);
     }

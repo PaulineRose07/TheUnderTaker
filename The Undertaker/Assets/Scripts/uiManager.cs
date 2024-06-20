@@ -1,11 +1,7 @@
-using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class uiManager : MonoBehaviour
 {
@@ -39,8 +35,7 @@ public class uiManager : MonoBehaviour
 
     public void GameOverOverlayOpen()
     {
-        m_gameOverPanel.SetActive(true);
-        var img = m_gameOverImage.GetComponent<Image>();
+        SceneManager.LoadScene(1);
     }
 
     public void GameOverOverlayClose()
