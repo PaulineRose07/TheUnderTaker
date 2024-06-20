@@ -37,6 +37,7 @@ public class BigSlimeNew : EnemyBase
         m_gameManager.m_amountOfSpawns--;
         AudioClip explosionClip = m_clipListExplosion[Random.Range(0,m_clipListExplosion.Count)];
         m_audioSource.PlayOneShot(explosionClip);
+        m_explodingParticles.Play();
         SplitWhenDead();
         SplitWhenDead();
         m_collider2D.enabled = false;

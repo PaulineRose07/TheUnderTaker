@@ -65,6 +65,8 @@ MonoBehaviour:
   m_clipListExplosion:
   - {fileID: 8300000, guid: 005884d5d5511e64994300ad7b9de3ef, type: 3}
   - {fileID: 8300000, guid: 44b7d79b8420461458c199821fd7113d, type: 3}
+  m_explodingParticles: {fileID: 6506873385313204651}
+  m_trailParticles: {fileID: 2284291749730885012}
   m_sizeOfSlime: 3
 --- !u!58 &391636547062358254
 CircleCollider2D:
@@ -236,7 +238,7 @@ GameObject:
   - component: {fileID: 2284291749730885012}
   - component: {fileID: 2019835529089465264}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Trail Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +276,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5195,7 +5197,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0

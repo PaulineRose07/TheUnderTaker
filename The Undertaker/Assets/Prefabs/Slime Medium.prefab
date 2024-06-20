@@ -110,6 +110,8 @@ MonoBehaviour:
   m_clipListExplosion:
   - {fileID: 8300000, guid: 005884d5d5511e64994300ad7b9de3ef, type: 3}
   - {fileID: 8300000, guid: 44b7d79b8420461458c199821fd7113d, type: 3}
+  m_explodingParticles: {fileID: 2217759371550759583}
+  m_trailParticles: {fileID: 2567288855006888381}
   m_sizeOfSlime: 2
 --- !u!82 &4281272904647248137
 AudioSource:
@@ -282,7 +284,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -5160,7 +5162,7 @@ GameObject:
   - component: {fileID: 2567288855006888381}
   - component: {fileID: 9041189644859192219}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Trail Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5198,7 +5200,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:

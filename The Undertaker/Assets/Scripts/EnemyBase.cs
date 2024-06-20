@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
@@ -17,6 +18,9 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] private int m_difficulty;
     public AudioSource m_audioSource;
     public List<AudioClip> m_clipListExplosion;
+    public ParticleSystem m_explodingParticles;
+    public ParticleSystem m_trailParticles;
+
 
 
 
@@ -51,11 +55,13 @@ public abstract class EnemyBase : MonoBehaviour
     public void ShowYourself()
     {
         m_spriteRenderer.enabled = true;
+        if (m_trailParticles != null) m_trailParticles.Play();
     }
 
     public void HideYourself()
     {
         m_spriteRenderer.enabled = false;
+        if(m_trailParticles != null) m_trailParticles.Stop();
     }
 
     public void LootOnDeath()
