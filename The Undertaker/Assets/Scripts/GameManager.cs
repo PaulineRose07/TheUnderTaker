@@ -1,15 +1,19 @@
 using Cinemachine;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+
 
 public class GameManager : MonoBehaviour {
+
     [Header("--- In Scene direct Links ---")]
     [SerializeField] public GameObject m_player;
     [SerializeField] private uiManager m_uiManager;
     [SerializeField] private HealthBar m_healthBar;
+    [SerializeField] private NecromancerBehavior m_boss;
+    [SerializeField] private AudioClip m_doorUnlockSound;
+    [SerializeField] private AudioSource m_audioSourceDoor;
     [Space(16)]
 
     [Header("--- Chamber Links ---")]
@@ -42,17 +46,24 @@ public class GameManager : MonoBehaviour {
         if (m_spawnManager.m_spawnPoints.Count == 0 && m_amountOfSpawns == 0) {
             Debug.Log("Wesh");
             m_spawnManager.RefreshSpawnPointsSprite();
-            foreach (DoorBehaviour door in m_doors)
+            /*foreach (DoorBehaviour door in m_doors)
             {
                 door.UnlockDoor();
             }
             //add here that the bool for the visited chamber is now true
-            m_directionalLight.intensity = .5f;
+            m_directionalLight.DOIntensity(.5f, .5f);*/
+
+            StartCoroutine(ChamberCleaned());
         }
 
         if(m_currentLives <= 0)
         {
             m_uiManager.GameOverOverlayOpen();
+        }
+
+        if(m_boss.m_lives <= 0 && m_amountOfSpawns == 0)
+        {
+            YouWon();
         }
     }
 
@@ -124,6 +135,24 @@ public class GameManager : MonoBehaviour {
         
     }
 
+    IEnumerator YouWon()
+    {
+        m_directionalLight.DOIntensity(.5f, .5f);
+        yield return new WaitForSeconds(3);
+        m_uiManager.YouWonTheGame();
+    }
+
+    
+    IEnumerator ChamberCleaned()
+    {
+        m_directionalLight.DOIntensity(.5f, .5f);
+        yield return new WaitForSeconds(1);
+        //if(m_doorUnlockSound != null) m_audioSourceDoor.Play(m_doorUnlockSound);
+        foreach (DoorBehaviour door in m_doors)
+        {
+            door.UnlockDoor();
+        }
+    }
 
 
 }

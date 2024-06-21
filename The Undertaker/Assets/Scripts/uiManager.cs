@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class uiManager : MonoBehaviour
@@ -8,8 +7,8 @@ public class uiManager : MonoBehaviour
     [SerializeField] private TMP_Text m_uiLives;
     [SerializeField] private TMP_Text m_uiScore;
     [SerializeField] private GameManager m_gameManager;
-    [SerializeField] private GameObject m_gameOverPanel;
-    [SerializeField] private Image m_gameOverImage;
+    [SerializeField] private GameObject m_bossPanel;
+
 
     // Update is called once per frame
     void Update()
@@ -17,7 +16,10 @@ public class uiManager : MonoBehaviour
         m_uiLives.text = "Lives : " + m_gameManager.m_currentLives.ToString();
         m_uiScore.text = m_gameManager.m_currentScore.ToString();
     }
-
+    public void BossPanelActivation()
+    {
+        m_bossPanel.SetActive(true);
+    }
     public void OpenSettingsMenu()
     {
 
@@ -30,7 +32,7 @@ public class uiManager : MonoBehaviour
 
     public void YouWonTheGame()
     {
-
+        SceneManager.LoadScene(2);
     }
 
     public void GameOverOverlayOpen()

@@ -5,11 +5,14 @@ using DG.Tweening;
 public class NecromancerBehavior : MonoBehaviour {
 
     [SerializeField] private GameManager m_gameManager;
+    [SerializeField] private uiManager m_uiManager;
     [SerializeField] private PoolSystem m_poolSystem;
     [SerializeField] private GameObject m_player;
+    [SerializeField] private NecromancienSpawner m_spawner;
     [Header("--- Infos ---")]
     [SerializeField] private int m_damagesToPlayer;
-    [SerializeField] private int m_lives;
+    [SerializeField] public int m_lives;
+    [SerializeField] private HealthBar m_healthBar;
     [SerializeField] private int m_pointsToScore;
     [SerializeField] private float m_speedOfMovement;
     [SerializeField] private SpriteRenderer m_spriteRenderer;
@@ -28,16 +31,25 @@ public class NecromancerBehavior : MonoBehaviour {
     private float m_timerChangeFromTopToRight;
     private bool m_isShielded;
     private float m_shieldTimer;
+    [SerializeField] private int m_ShieldLife = 5;
     [SerializeField] private GameObject m_shieldPrefab;
-
+    [SerializeField] Vector3 m_topScreen = new Vector3(0, 2, 0);
+    [SerializeField] Vector3 m_rightScreen = new Vector3(6, 0, 0);
+    [SerializeField] Vector3 m_LeftScreen = new Vector3(6, 0, 0);
+    Vector3 teleportPosition;
+    private int m_randomVector3;
 
     private void Start() {
+        m_isShielded = false;
         m_spriteRenderer.enabled = true;
         m_timerChangeFromTopToRight = m_timerDirectionTop;
+        m_healthBar.m_maxValue = m_lives;
+
+        StartCoroutine(FirstTeleport());
     }
 
     private void Update() {
-        MovementsTopOfScreen();
+        //MovementsTopOfScreen();
         //MovementRightSide();
         /*m_timerChangeFromTopToRight -= Time.deltaTime;
         if (m_timerChangeFromTopToRight < 0) 
@@ -52,6 +64,18 @@ public class NecromancerBehavior : MonoBehaviour {
         if (m_shieldTimer < 0) {
             DeactivateShield();
         }
+
+        if(m_lives == 10)
+        {
+            AddShield(m_ShieldLife);
+        }
+
+        if(m_lives == 5)
+        {
+            AddShield(m_ShieldLife);
+        }
+
+
     }
 
     public void AddShield(int _shieldTimer) {
@@ -120,14 +144,55 @@ public class NecromancerBehavior : MonoBehaviour {
 
     }
 
+    public IEnumerator StartBossScene()
+    {
+        yield return new WaitForSeconds(1);
+        ShowYourself();
+
+    }
+
+    private void LoseLife(int _damages)
+    {
+        m_lives -= _damages;
+        m_healthBar.ChangeHealthBar(-m_lives);
+    }
+
     public void ShowYourself() {
         m_spriteRenderer.enabled = true;
         if (m_trailParticles != null) m_trailParticles.Play();
     }
 
+    private IEnumerator FirstTeleport()
+    {
+        m_showOffParticles.Play();
+        yield return new WaitForSeconds(.3f);
+        m_spriteRenderer.enabled = true;
+        yield return new WaitForSeconds(.1f);
+        transform.DOScale(new Vector3(0, 1, 1), .2f);
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.enabled = false;
+        transform.localScale = Vector3.one;
+        m_uiManager.BossPanelActivation();
+    }
+
+    private IEnumerator Teleport()
+    {
+        transform.DOScale(new Vector3(0, 1, 1), .2f);
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.enabled = false;
+        transform.localScale = Vector3.one;
+
+        m_randomVector3 = Random.Range(0, 2);
+        if (m_randomVector3 == 0) teleportPosition = m_topScreen;
+        if (m_randomVector3 == 1) teleportPosition = m_rightScreen;
+        if (m_randomVector3 == 2) teleportPosition = m_LeftScreen;
+
+        transform.position = teleportPosition;
+    }
+
+
     IEnumerator ParticlesShow()
     {
-        
         yield return new WaitForSeconds(.5f);
     }
 
