@@ -112,6 +112,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 44b7d79b8420461458c199821fd7113d, type: 3}
   m_explodingParticles: {fileID: 2217759371550759583}
   m_trailParticles: {fileID: 2567288855006888381}
+  m_maxLives: 1
   m_sizeOfSlime: 2
 --- !u!82 &4281272904647248137
 AudioSource:

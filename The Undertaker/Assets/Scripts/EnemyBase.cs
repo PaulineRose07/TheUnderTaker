@@ -20,6 +20,7 @@ public abstract class EnemyBase : MonoBehaviour
     public List<AudioClip> m_clipListExplosion;
     public ParticleSystem m_explodingParticles;
     public ParticleSystem m_trailParticles;
+    public int m_maxLives;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,6 +46,11 @@ public abstract class EnemyBase : MonoBehaviour
     public virtual void OnTriggerExitReaction()
     {
 
+    }
+
+    public virtual void ResetOnSpawn()
+    {
+        m_lives = m_maxLives;
     }
 
     abstract public void TouchedByHeroProjectile();
