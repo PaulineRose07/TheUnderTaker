@@ -202,7 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb72bb320c714144e84e2b137ac6c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_doors: []
+  m_doors:
+  - {fileID: 8029249571912338496}
+  - {fileID: 5090489508507920541}
+  - {fileID: 1766753965163665316}
+  - {fileID: 7095755216613102405}
   m_chamberManager: {fileID: 4579068970813660055}
   m_gameManager: {fileID: 0}
 --- !u!61 &1247077969426726887
@@ -396,7 +400,7 @@ GameObject:
   - component: {fileID: 8145307411943326017}
   - component: {fileID: 4579068970813660055}
   m_Layer: 0
-  m_Name: D1 T4
+  m_Name: D2 Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +454,7 @@ MonoBehaviour:
   - {fileID: 1766753965163665316}
   - {fileID: 7095755216613102405}
   m_maxSpawnOfEnemies: 4
-  m_difficultyLevel: 1
+  m_difficultyLevel: 2
   m_amountOfActiveDoors: 0
   m_timerForSpawn: 0.3
   m_hasAlreadyBeenVisited: 0
@@ -1203,7 +1207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 672d240429c3a89438b8a5e64e85924c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0f57d78f3593ae42808ad14fe523bdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1480,7 +1484,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 672d240429c3a89438b8a5e64e85924c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0f57d78f3593ae42808ad14fe523bdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

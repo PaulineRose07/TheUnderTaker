@@ -202,7 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb72bb320c714144e84e2b137ac6c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_doors: []
+  m_doors:
+  - {fileID: 8029249571912338496}
+  - {fileID: 5090489508507920541}
+  - {fileID: 1766753965163665316}
+  - {fileID: 7095755216613102405}
   m_chamberManager: {fileID: 4579068970813660055}
   m_gameManager: {fileID: 0}
 --- !u!61 &1247077969426726887
@@ -396,7 +400,7 @@ GameObject:
   - component: {fileID: 8145307411943326017}
   - component: {fileID: 4579068970813660055}
   m_Layer: 0
-  m_Name: D3 T4
+  m_Name: D1 Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +454,7 @@ MonoBehaviour:
   - {fileID: 1766753965163665316}
   - {fileID: 7095755216613102405}
   m_maxSpawnOfEnemies: 4
-  m_difficultyLevel: 3
+  m_difficultyLevel: 1
   m_amountOfActiveDoors: 0
   m_timerForSpawn: 0.3
   m_hasAlreadyBeenVisited: 0
