@@ -5024,10 +5024,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f325b0abb93b1dc4895378380ae7a3d3, type: 3}
   m_explodingParticles: {fileID: 166503305811614037}
   m_trailParticles: {fileID: 0}
+  m_maxLives: 0
   m_FleeCount: 0.5
   m_fireDelay: 2
   m_isShooting: 0
   m_directionDelay: 1
+  m_slimeWalk: []
 --- !u!82 &7381057480290181842
 AudioSource:
   m_ObjectHideFlags: 0

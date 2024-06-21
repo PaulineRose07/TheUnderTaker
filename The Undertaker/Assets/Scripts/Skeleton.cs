@@ -123,7 +123,7 @@ public class Skeleton : EnemyBase
         boneScript.ActivateSpriteRenderer();
         boneScript.m_gameManager = m_gameManager;
         var direction = m_player.transform.position - bone.transform.position;
-        boneScript.m_direction = direction;
+        boneScript.m_direction = direction.normalized;
         //AudioClip launchingShovel = m_launchShovel[Random.Range(0, m_launchShovel.Count)];
         //m_audioSource.PlayOneShot(launchingShovel);
     }

@@ -66,6 +66,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8237649da970f76479f83b04ac439ad6, type: 3}
   m_explodingParticles: {fileID: 6506873385313204651}
   m_trailParticles: {fileID: 2284291749730885012}
+  m_maxLives: 0
   m_sizeOfSlime: 3
   m_slimeWalk:
   - {fileID: 8300000, guid: 079c43d7609959248b07813ddb39243b, type: 3}
@@ -99,7 +100,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

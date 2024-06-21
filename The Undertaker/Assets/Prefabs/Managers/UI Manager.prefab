@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 926441197897433969}
   - component: {fileID: 7698032879732768534}
   m_Layer: 5
-  m_Name: Retry
+  m_Name: Resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b9f3761eaa9664bae16513180d98ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_shootDelay: 0.2
+  m_shootDelay: 0.05
   m_poolSystem: {fileID: 0}
   m_audioSource: {fileID: 8533800549617227266}
   m_launchShovel:

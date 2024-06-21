@@ -67,7 +67,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_trailParticles: {fileID: 2567288855006888381}
   m_maxLives: 1
   m_sizeOfSlime: 2
+  m_slimeWalk: []
 --- !u!82 &4281272904647248137
 AudioSource:
   m_ObjectHideFlags: 0

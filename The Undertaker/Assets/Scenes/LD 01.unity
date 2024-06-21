@@ -6914,6 +6914,10 @@ PrefabInstance:
       propertyPath: m_gameManager
       value: 
       objectReference: {fileID: 354288447}
+    - target: {fileID: 6510103327546770448, guid: af49b26077b4dfd43b657a1278953184, type: 3}
+      propertyPath: m_bossMusicSource
+      value: 
+      objectReference: {fileID: 4900463441726863458}
     - target: {fileID: 7084440106808898064, guid: af49b26077b4dfd43b657a1278953184, type: 3}
       propertyPath: m_Name
       value: UI Manager
@@ -6935,6 +6939,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af49b26077b4dfd43b657a1278953184, type: 3}
+--- !u!82 &4900463441726863458 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8943078301850890382, guid: af49b26077b4dfd43b657a1278953184, type: 3}
+  m_PrefabInstance: {fileID: 4900463441726863457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5892894951950230616
 PrefabInstance:
   m_ObjectHideFlags: 0
