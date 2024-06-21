@@ -429,6 +429,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Shield (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2984840225073720005, guid: 3fb2f0e40d766b441940476c2c65a12c, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 2984840225073720005, guid: 3fb2f0e40d766b441940476c2c65a12c, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2184,6 +2192,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Heal (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3012,6 +3028,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Heal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3508,6 +3532,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Heal (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3821,6 +3853,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6729928454533197963, guid: 0471b38be1fdec64ca32993e1601c9f1, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 6729928454533197963, guid: 0471b38be1fdec64ca32993e1601c9f1, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     - target: {fileID: 7633391567629971644, guid: 0471b38be1fdec64ca32993e1601c9f1, type: 3}
       propertyPath: m_Name
       value: Potion Speed
@@ -5196,6 +5236,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 2984840225073720005, guid: 3fb2f0e40d766b441940476c2c65a12c, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 2984840225073720005, guid: 3fb2f0e40d766b441940476c2c65a12c, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5740,6 +5788,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Heal (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5936,6 +5992,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Heal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6729,6 +6793,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Heal
       objectReference: {fileID: 0}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 4585951646231272323}
+    - target: {fileID: 8809955363678717603, guid: 85f4466b2236a6c40b82edf90a0be61f, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 354288447}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

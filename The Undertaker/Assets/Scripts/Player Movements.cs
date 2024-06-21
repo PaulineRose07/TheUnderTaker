@@ -77,7 +77,7 @@ public class PlayerMovements : MonoBehaviour
     public void AddShield(int _shieldTimer)
     {
         m_isShielded = true;
-        m_shieldTimer += _shieldTimer;
+        m_shieldTimer = _shieldTimer;
         m_shieldPrefab.SetActive(true);
         m_shieldPrefab.transform.DOScale(2, 1.5f);
     }
