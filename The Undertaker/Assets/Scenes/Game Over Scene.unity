@@ -256,8 +256,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 76bc15ca6df78ba4491fbfe72ee37a7d, type: 2}
+  m_sharedMaterial: {fileID: 7157583892393846656, guid: 76bc15ca6df78ba4491fbfe72ee37a7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -29683,8 +29683,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Retry
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 76bc15ca6df78ba4491fbfe72ee37a7d, type: 2}
+  m_sharedMaterial: {fileID: 7157583892393846656, guid: 76bc15ca6df78ba4491fbfe72ee37a7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -29817,8 +29817,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: QUIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 76bc15ca6df78ba4491fbfe72ee37a7d, type: 2}
+  m_sharedMaterial: {fileID: 7157583892393846656, guid: 76bc15ca6df78ba4491fbfe72ee37a7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -39700,6 +39700,124 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &1377694468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 127839822250850185, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_Name
+      value: AmbianceVFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.4084425
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7038044
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.10225279
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531209934433486284, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4349cc0a06d11064db31b1d8926dc491, type: 3}
+--- !u!1001 &1416317553
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5191973181989744056, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e55c0d458917934d911e23d459ed0e3, type: 3}
+    - target: {fileID: 6593638422010115938, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_Name
+      value: MusicManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9951642
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44770995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.027690025
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931652162226288792, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5af525e1916f17d4196c8ec61a3214ed, type: 3}
 --- !u!1 &1589163788
 GameObject:
   m_ObjectHideFlags: 0
@@ -39854,8 +39972,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.45882353, g: 0.45882353, b: 0.58431375, a: 1}
+    m_PressedColor: {r: 0.45882353, g: 0.45882353, b: 0.58431375, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -39987,8 +40105,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.45882353, g: 0.45882353, b: 0.58431375, a: 1}
+    m_PressedColor: {r: 0.45882353, g: 0.45882353, b: 0.58431375, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -40120,8 +40238,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.45882353, g: 0.45882353, b: 0.58431375, a: 1}
+    m_PressedColor: {r: 0.45882353, g: 0.45882353, b: 0.58431375, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -40201,3 +40319,5 @@ SceneRoots:
   - {fileID: 329660265}
   - {fileID: 1120505915}
   - {fileID: 235338518}
+  - {fileID: 1377694468}
+  - {fileID: 1416317553}

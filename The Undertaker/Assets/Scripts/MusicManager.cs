@@ -4,19 +4,10 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager m_instance;
     AudioSource m_AudioSource;
-    [SerializeField] private AudioClip m_overallMusic;
 
     private void Awake()
     {
-        if (m_instance == null)
-        {
-            m_instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+  
     }
 
     private void Start()
@@ -24,4 +15,6 @@ public class MusicManager : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
         m_AudioSource.Play();
     }
+
+   
 }

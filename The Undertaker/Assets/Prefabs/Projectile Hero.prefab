@@ -4971,7 +4971,6 @@ MonoBehaviour:
   m_audioSource: {fileID: 6331466904801901494}
   m_explosionClip:
   - {fileID: 8300000, guid: 2c8ca2b971dea9e429605753bfc11545, type: 3}
-  - {fileID: 8300000, guid: 1df58e3509993bd469796145c6842ea3, type: 3}
   - {fileID: 8300000, guid: 81d7986850ded684aa291130e86c6a02, type: 3}
   - {fileID: 8300000, guid: 9eebd3e22e93ed24283827b2b91d7e66, type: 3}
   m_exlosionParticles: {fileID: 6319834080815232068}

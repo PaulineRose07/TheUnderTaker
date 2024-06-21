@@ -63,11 +63,13 @@ MonoBehaviour:
   m_difficulty: 2
   m_audioSource: {fileID: 4591592934792650375}
   m_clipListExplosion:
-  - {fileID: 8300000, guid: 005884d5d5511e64994300ad7b9de3ef, type: 3}
-  - {fileID: 8300000, guid: 44b7d79b8420461458c199821fd7113d, type: 3}
+  - {fileID: 8300000, guid: 8237649da970f76479f83b04ac439ad6, type: 3}
   m_explodingParticles: {fileID: 6506873385313204651}
   m_trailParticles: {fileID: 2284291749730885012}
   m_sizeOfSlime: 3
+  m_slimeWalk:
+  - {fileID: 8300000, guid: 079c43d7609959248b07813ddb39243b, type: 3}
+  - {fileID: 8300000, guid: efe5b00e19046224a91740eddd14daea, type: 3}
 --- !u!58 &391636547062358254
 CircleCollider2D:
   m_ObjectHideFlags: 0

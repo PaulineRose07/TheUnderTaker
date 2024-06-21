@@ -343,7 +343,8 @@ MonoBehaviour:
   m_damagesToEnemy: 1
   m_collider: {fileID: 4321883150035198732}
   m_audioSource: {fileID: 623955143367584851}
-  m_explosionClip: []
+  m_explosionClip:
+  - {fileID: 8300000, guid: fc8c8e35fab1c894c91606d6eab6d3e3, type: 3}
   m_exlosionParticles: {fileID: 4053131905116269162}
   m_rotationZ: 200
   m_direction: {x: 0, y: 0, z: 0}

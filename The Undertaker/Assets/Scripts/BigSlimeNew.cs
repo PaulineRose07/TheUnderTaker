@@ -1,9 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BigSlimeNew : EnemyBase
 {
     [SerializeField] private int m_sizeOfSlime;
+    [SerializeField] List<AudioClip> m_slimeWalk;
 
     private void Start()
     {
@@ -12,6 +14,8 @@ public class BigSlimeNew : EnemyBase
     // Update is called once per frame
     void Update()
     {
+        AudioClip slimeWalk = m_slimeWalk[Random.Range(0, m_clipListExplosion.Count)];
+        m_audioSource.PlayOneShot(slimeWalk);
         transform.position = Vector2.MoveTowards(transform.position, m_player.transform.position, m_speedOfMovement * Time.deltaTime);
         if (m_player.transform.position.x > transform.position.x)
         {

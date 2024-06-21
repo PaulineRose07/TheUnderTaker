@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Skeleton : EnemyBase
@@ -11,6 +12,7 @@ public class Skeleton : EnemyBase
     private float m_fireTimer;
     private float m_timerFlee;
     private Vector3 m_direction;
+    [SerializeField] List<AudioClip> m_slimeWalk;
 
     private void Start() 
     {
@@ -87,6 +89,8 @@ public class Skeleton : EnemyBase
                 m_timerChangeDirection = m_directionDelay;
             }
             transform.Translate(m_speedOfMovement * Time.deltaTime * m_direction, Space.World);
+            AudioClip slimeWalk = m_slimeWalk[Random.Range(0, m_clipListExplosion.Count)];
+            m_audioSource.PlayOneShot(slimeWalk);
         }
     }
 

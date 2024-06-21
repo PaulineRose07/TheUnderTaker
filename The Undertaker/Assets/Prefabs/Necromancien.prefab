@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426075987224932015}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -14533,7 +14533,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3187123931738402475}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -19897,7 +19897,11 @@ MonoBehaviour:
   m_spriteRenderer: {fileID: 2877310609032406185}
   m_collider2D: {fileID: 8107515977521466358}
   m_audioSource: {fileID: 165458880795349453}
+  m_bossMusic: {fileID: 0}
   m_clipListExplosion: []
+  m_laugh: {fileID: 8300000, guid: 6a8aa833e9eb36c4981a84591e8ea7aa, type: 3}
+  m_death: {fileID: 8300000, guid: 19d9238fd35b6604bb482280fb41dc8d, type: 3}
+  m_spawn: {fileID: 8300000, guid: d4275f324bff53a4694888d3a275b058, type: 3}
   m_explodingParticles: {fileID: 0}
   m_trailParticles: {fileID: 0}
   m_showOffParticles: {fileID: 0}
@@ -20060,7 +20064,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6260970515245988637}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -25029,7 +25033,7 @@ Transform:
   m_GameObject: {fileID: 7735582951582214099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.68, z: 0}
+  m_LocalPosition: {x: -0.39, y: -1.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25051,7 +25055,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7735582951582214099}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -30150,7 +30154,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8300895803808675371}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0

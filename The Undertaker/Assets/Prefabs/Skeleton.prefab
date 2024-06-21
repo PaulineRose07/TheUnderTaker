@@ -5020,7 +5020,8 @@ MonoBehaviour:
   m_collider2D: {fileID: 6680807126061456094}
   m_difficulty: 0
   m_audioSource: {fileID: 7381057480290181842}
-  m_clipListExplosion: []
+  m_clipListExplosion:
+  - {fileID: 8300000, guid: f325b0abb93b1dc4895378380ae7a3d3, type: 3}
   m_explodingParticles: {fileID: 166503305811614037}
   m_trailParticles: {fileID: 0}
   m_FleeCount: 0.5

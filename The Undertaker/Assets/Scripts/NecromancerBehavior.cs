@@ -20,6 +20,9 @@ public class NecromancerBehavior : MonoBehaviour {
     [Header("--- Audio ---")]
     [SerializeField] private AudioSource m_audioSource;
     [SerializeField] private List<AudioClip> m_clipListExplosion;
+    [SerializeField] private AudioClip m_laugh;
+    [SerializeField] private AudioClip m_death;
+    [SerializeField] private AudioClip m_spawn;
     [Header("--- Particles ---")]
     [SerializeField] private ParticleSystem m_explodingParticles;
     [SerializeField] private ParticleSystem m_trailParticles;
@@ -160,8 +163,7 @@ public class NecromancerBehavior : MonoBehaviour {
     {
         m_gameManager.UpdateScore(m_pointsToScore);
         m_gameManager.m_amountOfSpawns--;
-        //AudioClip explosionClip = m_clipListExplosion[Random.Range(0, m_clipListExplosion.Count)];
-        //m_audioSource.PlayOneShot(explosionClip);
+        m_audioSource.PlayOneShot(m_death);
         m_explodingParticles.Play();
         m_collider2D.enabled = false;
         m_spriteRenderer.enabled = false;
@@ -194,8 +196,10 @@ public class NecromancerBehavior : MonoBehaviour {
     private IEnumerator FirstTeleport()
     {
         m_showOffParticles.Play();
-        yield return new WaitForSeconds(.3f);
+        m_audioSource.PlayOneShot(m_spawn);
+        yield return new WaitForSeconds(.5f);
         m_spriteRenderer.enabled = true;
+        m_audioSource.PlayOneShot(m_laugh);
         yield return new WaitForSeconds(.1f);
         transform.DOScale(new Vector3(0, 1, 1), .2f);
         yield return new WaitForSeconds(.1f);

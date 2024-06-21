@@ -13,6 +13,10 @@ public class FlashLightReveal : MonoBehaviour
         {
             behavior.MaterialChangeToUnlit();
         }
+        if(collision.gameObject.TryGetComponent<EnemyProjectileBase>(out EnemyProjectileBase projecile))
+        {
+            projecile.ShowYourself();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -26,5 +30,11 @@ public class FlashLightReveal : MonoBehaviour
         {
             behavior.MaterialBackToDark();
         }
+        if (collision.gameObject.TryGetComponent<EnemyProjectileBase>(out EnemyProjectileBase projecile))
+        {
+            projecile.HideYourself();
+        }
     }
+
+
 }
