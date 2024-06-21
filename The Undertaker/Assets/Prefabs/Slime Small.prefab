@@ -9736,6 +9736,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 44b7d79b8420461458c199821fd7113d, type: 3}
   m_explodingParticles: {fileID: 4463228213523007165}
   m_trailParticles: {fileID: 8746152663182740508}
+  m_maxLives: 1
   m_sizeOfSlime: 1
 --- !u!58 &3320883701828590396
 CircleCollider2D:

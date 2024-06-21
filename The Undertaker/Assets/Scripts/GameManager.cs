@@ -149,7 +149,6 @@ public class GameManager : MonoBehaviour {
     
     IEnumerator ChamberCleaned()
     {
-        Debug.Log("Wesh");
         m_directionalLight.DOIntensity(.5f, .5f);
         yield return new WaitForSeconds(1);
         //if(m_doorUnlockSound != null) m_audioSourceDoor.Play(m_doorUnlockSound);

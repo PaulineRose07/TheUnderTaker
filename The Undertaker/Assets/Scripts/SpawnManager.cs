@@ -21,6 +21,7 @@ public class SpawnManager : MonoBehaviour
     private void Awake()
     {
         m_canSpawn = false;
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,7 @@ public class SpawnManager : MonoBehaviour
                 m_timerSlime -= Time.deltaTime;
                 if (m_timerSlime <= 0 && m_spawnPoints.Count > 0)
                 {
-                    SpawnSlime(Random.Range(1, 4));
+                    SpawnSlime(Random.Range(1, 3));
                     m_gameManager.m_amountOfSpawns++;
                     m_timerSlime = m_delayerSlimeSpawn;
                 }
@@ -85,7 +86,7 @@ public class SpawnManager : MonoBehaviour
                     int methodSelected = Random.Range(0, 3);
                     if (methodSelected == 0)
                     {
-                        SpawnSlime(Random.Range(1, 4));
+                        SpawnSlime(Random.Range(2, 4));
                         m_gameManager.m_amountOfSpawns++;
                     }
                     if (methodSelected == 1)
@@ -129,6 +130,7 @@ public class SpawnManager : MonoBehaviour
         SplitScript.m_collider2D.enabled = true;
         var SplitSlimeScript = instanceSplit.GetComponent<BigSlimeNew>();
         SplitSlimeScript.m_player = m_gameManager.m_player;
+        SplitSlimeScript.ResetOnSpawn();
     }
 
     public void SpawnHealthPotion(Vector3 _position)
@@ -172,10 +174,12 @@ public class SpawnManager : MonoBehaviour
         instanceOfMiniN.SetActive(true);
         var miniNecromancerBase = instanceOfMiniN.GetComponent<EnemyBase>();
         miniNecromancerBase.m_gameManager = m_gameManager;
+        miniNecromancerBase.m_spawnManager = this;
         miniNecromancerBase.m_poolSystem = m_poolSystem;
         miniNecromancerBase.m_collider2D.enabled = true;
         var miniNecromancerScript = instanceOfMiniN.GetComponent<MiniNecromancer>();
         miniNecromancerScript.m_player = m_gameManager.m_player;
+        miniNecromancerScript.ResetOnSpawn();
 
         Debug.Log("Mini Necromancer");
     }
@@ -197,6 +201,7 @@ public class SpawnManager : MonoBehaviour
         SkeletonBase.m_collider2D.enabled = true;
         var SkeletonScript = instanceOfSkeleton.GetComponent<Skeleton>();
         SkeletonScript.m_player = m_gameManager.m_player;
+        SkeletonScript.ResetOnSpawn();
 
     }
 
