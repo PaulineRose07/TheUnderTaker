@@ -7,10 +7,15 @@ public class HeroWeaponBase : ProjectileBase
         m_collider = GetComponent<Collider2D>();
     }
 
+    private void OnEnable()
+    {
+        Invoke("BulletDeactivation", .5f);
+    }
     private void Update()
     {
         ProjectileMovement();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<EnemyBase>(out EnemyBase enemyBase))
@@ -26,5 +31,10 @@ public class HeroWeaponBase : ProjectileBase
         if (collision.gameObject.layer == 15)
             return;
         BulletTouchedSomething();
+    }
+
+    private void BulletDeactivation()
+    {
+       gameObject.SetActive(false);
     }
 }

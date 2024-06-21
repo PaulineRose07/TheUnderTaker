@@ -24,7 +24,7 @@ public class EnemyProjectileBase : ProjectileBase
     {
         ProjectileMovement();
         transform.Rotate(0,0,m_rotationZ *  Time.deltaTime);
-        m_audioSource.PlayOneShot(m_boneSwing);
+        //m_audioSource.PlayOneShot(m_boneSwing);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

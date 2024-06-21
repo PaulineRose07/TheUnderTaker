@@ -14,8 +14,8 @@ public class BigSlimeNew : EnemyBase
     // Update is called once per frame
     void Update()
     {
-        AudioClip slimeWalk = m_slimeWalk[Random.Range(0, m_clipListExplosion.Count)];
-        m_audioSource.PlayOneShot(slimeWalk);
+        //AudioClip slimeWalk = m_slimeWalk[Random.Range(0, m_clipListExplosion.Count)];
+        //m_audioSource.PlayOneShot(slimeWalk);
         transform.position = Vector2.MoveTowards(transform.position, m_player.transform.position, m_speedOfMovement * Time.deltaTime);
         if (m_player.transform.position.x > transform.position.x)
         {

@@ -10,7 +10,8 @@ public class uiManager : MonoBehaviour
     [SerializeField] private GameManager m_gameManager;
     [SerializeField] private GameObject m_bossPanel;
     [SerializeField] private GameObject m_settingsPanel;
-    [SerializeField] private AudioSource m_bossMusic;
+    [SerializeField] private AudioSource m_bossMusicSource;
+    [SerializeField] private AudioClip m_bossMusic;
 
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class uiManager : MonoBehaviour
     public void BossPanelActivation()
     {
         m_bossPanel.SetActive(true);
-        m_bossMusic.Play();
+        m_bossMusicSource.PlayOneShot(m_bossMusic);
     }
     public void OpenSettingsMenu()
     {
