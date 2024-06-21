@@ -44,7 +44,9 @@ public class NecromancerBehavior : MonoBehaviour {
         m_spriteRenderer.enabled = true;
         m_timerChangeFromTopToRight = m_timerDirectionTop;
         m_healthBar.m_maxValue = m_lives;
+        m_gameManager.m_amountOfSpawns++;
 
+        
         StartCoroutine(FirstTeleport());
     }
 
@@ -141,17 +143,43 @@ public class NecromancerBehavior : MonoBehaviour {
 
     public void TouchedByHeroProjectile() 
     {
+        if (m_lives <= 0)
+        {
+            StartCoroutine(EnemyDeath());
+        }
+        else
+        {
+            
+            StartCoroutine(BlinkWhenHurt());
 
+        }
     }
 
-    public IEnumerator StartBossScene()
+    IEnumerator EnemyDeath()
     {
-        yield return new WaitForSeconds(1);
-        ShowYourself();
-
+        m_gameManager.UpdateScore(m_pointsToScore);
+        m_gameManager.m_amountOfSpawns--;
+        //AudioClip explosionClip = m_clipListExplosion[Random.Range(0, m_clipListExplosion.Count)];
+        //m_audioSource.PlayOneShot(explosionClip);
+        m_explodingParticles.Play();
+        m_collider2D.enabled = false;
+        m_spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
     }
 
-    private void LoseLife(int _damages)
+    IEnumerator BlinkWhenHurt()
+    {
+        var originColor = m_spriteRenderer.color;
+        m_spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.color = originColor;
+        m_spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        m_spriteRenderer.color = originColor;
+    }
+
+    public void LoseLife(int _damages)
     {
         m_lives -= _damages;
         m_healthBar.ChangeHealthBar(-m_lives);

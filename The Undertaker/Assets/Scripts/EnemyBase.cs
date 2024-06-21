@@ -21,9 +21,6 @@ public abstract class EnemyBase : MonoBehaviour
     public ParticleSystem m_trailParticles;
 
 
-
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<PlayerMovements>(out PlayerMovements component))
