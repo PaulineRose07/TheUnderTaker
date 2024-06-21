@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class BossRoomTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] NecromancerBehavior m_necromancer;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
+        if (collision.TryGetComponent<PlayerMovements>(out PlayerMovements component))
+        {
+            m_necromancer.gameObject.SetActive(true);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

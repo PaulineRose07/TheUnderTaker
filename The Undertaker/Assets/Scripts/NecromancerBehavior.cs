@@ -55,16 +55,6 @@ public class NecromancerBehavior : MonoBehaviour {
     }
 
     private void Update() {
-        //MovementsTopOfScreen();
-        //MovementRightSide();
-        /*m_timerChangeFromTopToRight -= Time.deltaTime;
-        if (m_timerChangeFromTopToRight < 0) 
-        {
-            transform.position = new Vector3(7,1, 0);
-            MovementRightSide();
-            m_timerChangeFromTopToRight;
-        }
-        */
 
         m_shieldTimer -= Time.deltaTime;
         if (m_shieldTimer < 0) {
@@ -95,42 +85,6 @@ public class NecromancerBehavior : MonoBehaviour {
         m_isShielded = false;
         m_shieldPrefab.SetActive(false);
         m_shieldPrefab.transform.localScale = Vector3.zero;
-    }
-
-
-    private void MovementsLeftSide() 
-    {
-
-    }
-
-    private void MovementRightSide() {
-        if (dirUp)
-            transform.Translate(Vector2.up * m_speedOfMovement * Time.deltaTime);
-        else
-            transform.Translate(-Vector2.up * m_speedOfMovement * Time.deltaTime);
-
-        if (transform.position.y >= 3.0f) {
-            dirUp = false;
-        }
-
-        if (transform.position.y <= -3) {
-            dirUp = true;
-        }
-    }
-    private void MovementsTopOfScreen() {
-        if (dirRight)
-            transform.Translate(Vector2.right * m_speedOfMovement * Time.deltaTime);
-        else
-            transform.Translate(-Vector2.right * m_speedOfMovement * Time.deltaTime);
-
-        if (transform.position.x >= 4.0f) {
-            dirRight = false;
-        }
-
-        if (transform.position.x <= -4) {
-            dirRight = true;
-        }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -201,19 +155,10 @@ public class NecromancerBehavior : MonoBehaviour {
         m_spriteRenderer.enabled = true;
         m_audioSource.PlayOneShot(m_laugh);
         yield return new WaitForSeconds(.1f);
-        transform.DOScale(new Vector3(0, 1, 1), .2f);
-        yield return new WaitForSeconds(.1f);
         m_collider2D.enabled = true;
         m_spriteRenderer.enabled = false;
         transform.localScale = Vector3.one;
         m_uiManager.BossPanelActivation();
-
-        m_randomVector3 = Random.Range(0, 2);
-        if (m_randomVector3 == 0) teleportPosition = m_topScreen;
-        if (m_randomVector3 == 1) teleportPosition = m_rightScreen;
-        if (m_randomVector3 == 2) teleportPosition = m_LeftScreen;
-
-        transform.position = teleportPosition;
     }
 
     private IEnumerator Teleport()
