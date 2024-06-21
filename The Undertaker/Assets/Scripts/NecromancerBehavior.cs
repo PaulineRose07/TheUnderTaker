@@ -45,6 +45,7 @@ public class NecromancerBehavior : MonoBehaviour {
         m_timerChangeFromTopToRight = m_timerDirectionTop;
         m_healthBar.m_maxValue = m_lives;
         m_gameManager.m_amountOfSpawns++;
+        m_collider2D.enabled = false;
 
         
         StartCoroutine(FirstTeleport());
@@ -198,9 +199,17 @@ public class NecromancerBehavior : MonoBehaviour {
         yield return new WaitForSeconds(.1f);
         transform.DOScale(new Vector3(0, 1, 1), .2f);
         yield return new WaitForSeconds(.1f);
+        m_collider2D.enabled = true;
         m_spriteRenderer.enabled = false;
         transform.localScale = Vector3.one;
         m_uiManager.BossPanelActivation();
+
+        m_randomVector3 = Random.Range(0, 2);
+        if (m_randomVector3 == 0) teleportPosition = m_topScreen;
+        if (m_randomVector3 == 1) teleportPosition = m_rightScreen;
+        if (m_randomVector3 == 2) teleportPosition = m_LeftScreen;
+
+        transform.position = teleportPosition;
     }
 
     private IEnumerator Teleport()
@@ -216,12 +225,6 @@ public class NecromancerBehavior : MonoBehaviour {
         if (m_randomVector3 == 2) teleportPosition = m_LeftScreen;
 
         transform.position = teleportPosition;
-    }
-
-
-    IEnumerator ParticlesShow()
-    {
-        yield return new WaitForSeconds(.5f);
     }
 
     public void HideYourself() {
