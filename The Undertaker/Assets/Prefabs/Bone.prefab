@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spriteRenderer: {fileID: 6330314121241699395}
-  m_speedOfProjectile: 1
+  m_speedOfProjectile: 3
   m_damagesToEnemy: 1
   m_collider: {fileID: 4321883150035198732}
   m_audioSource: {fileID: 623955143367584851}

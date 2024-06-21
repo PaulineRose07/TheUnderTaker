@@ -5629,7 +5629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1158188918340429642}
   - component: {fileID: 5385854889001461377}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: BigShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5713,7 +5713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7192662868598273304}
   - component: {fileID: 7521610291452367296}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}

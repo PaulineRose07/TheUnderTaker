@@ -22,7 +22,8 @@ public class uiManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OpenSettingsMenu();
+            Application.Quit();
+            //OpenSettingsMenu();
         }
     }
     public void BossPanelActivation()

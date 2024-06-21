@@ -83,7 +83,7 @@ public class SpawnManager : MonoBehaviour
                 m_timerSlime -= Time.deltaTime;
                 if (m_timerSlime <= 0 && m_spawnPoints.Count > 0)
                 {
-                    int methodSelected = Random.Range(0, 3);
+                    int methodSelected = Random.Range(0, 2);
                     if (methodSelected == 0)
                     {
                         SpawnSlime(Random.Range(2, 4));

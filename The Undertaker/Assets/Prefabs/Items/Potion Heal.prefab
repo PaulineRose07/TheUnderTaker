@@ -138,7 +138,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0ea7b0ba663f47241acbb3d3656e895b, type: 3}
   - {fileID: 8300000, guid: 043bbb8c65510ca46a128ef0148944e3, type: 3}
   m_audioSource: {fileID: 9120216043757027319}
-  m_LifePoints: 1
+  m_LifePoints: 5
 --- !u!58 &1721854208415402314
 CircleCollider2D:
   m_ObjectHideFlags: 0

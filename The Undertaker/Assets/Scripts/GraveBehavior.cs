@@ -23,7 +23,6 @@ public class GraveBehavior : MonoBehaviour
     public void ChangeGraveWhenOpen()
     {
         //m_spriteRenderer.sprite = m_openedGrave;
-        m_collider2D.isTrigger = true;
         gameObject.layer = 11;
     }
 
