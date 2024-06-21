@@ -9726,7 +9726,7 @@ MonoBehaviour:
   m_damagesToPlayer: 1
   m_lives: 1
   m_pointsToScore: 1
-  m_speedOfMovement: 0.5
+  m_speedOfMovement: 1.5
   m_spriteRenderer: {fileID: 1673260930592225921}
   m_collider2D: {fileID: 3320883701828590396}
   m_difficulty: 1

@@ -1510,8 +1510,7 @@ MonoBehaviour:
   m_uiLives: {fileID: 8606529770843995232}
   m_uiScore: {fileID: 1586774461786631305}
   m_gameManager: {fileID: 0}
-  m_gameOverPanel: {fileID: 0}
-  m_gameOverImage: {fileID: 0}
+  m_bossPanel: {fileID: 2712050257616760299}
 --- !u!1 &7256744882585075228
 GameObject:
   m_ObjectHideFlags: 0

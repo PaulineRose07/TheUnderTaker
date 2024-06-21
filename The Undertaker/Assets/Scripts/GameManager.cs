@@ -32,10 +32,13 @@ public class GameManager : MonoBehaviour {
     [SerializeField] public int m_currentScore;
     [SerializeField] public int m_currentLives;
 
+    private bool m_roomHasBeenCleaned;
+
 
 
     // Start is called before the first frame update
     void Start() {
+        m_roomHasBeenCleaned = false;
         m_currentLives = m_player.GetComponent<PlayerInformation>().m_maxLives;
         m_healthBar.m_maxValue = m_currentLives;
         InitializeFirstChamber(m_chamberManagers[0]);
@@ -43,8 +46,8 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (m_spawnManager.m_spawnPoints.Count == 0 && m_amountOfSpawns == 0) {
-            Debug.Log("Wesh");
+        if (!m_roomHasBeenCleaned && m_spawnManager.m_spawnPoints.Count == 0 && m_amountOfSpawns == 0) {
+            m_roomHasBeenCleaned = true;
             m_spawnManager.RefreshSpawnPointsSprite();
             /*foreach (DoorBehaviour door in m_doors)
             {
@@ -93,8 +96,9 @@ public class GameManager : MonoBehaviour {
             door.LockDoors();
         }
         //m_directionalLight = _chamberManager.m_directionalLight;
-        m_directionalLight.intensity = 0.2f;
+        m_directionalLight.DOIntensity(0, .5f);
         m_spawnManager.m_canSpawn = true;
+        m_roomHasBeenCleaned = false;
     }
 
     public void SwitchCamera(ChamberManager _chamberManager)
@@ -145,6 +149,7 @@ public class GameManager : MonoBehaviour {
     
     IEnumerator ChamberCleaned()
     {
+        Debug.Log("Wesh");
         m_directionalLight.DOIntensity(.5f, .5f);
         yield return new WaitForSeconds(1);
         //if(m_doorUnlockSound != null) m_audioSourceDoor.Play(m_doorUnlockSound);

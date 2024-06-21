@@ -1,5 +1,6 @@
-
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
@@ -62,12 +63,12 @@ public abstract class EnemyBase : MonoBehaviour
 
     public void LootOnDeath()
     {
-        int dropChance = Random.Range(0, 10);
-        if (m_difficulty == 3 && dropChance >= 9)
+        int dropChance = Random.Range(0, 15);
+        if (m_difficulty == 3 && dropChance == 2)
             m_spawnManager.SpawnShieldPotion(transform.position);
-        if (m_difficulty >= 2 && dropChance >= 8)
+        if (m_difficulty >= 2 && dropChance == 1)
             m_spawnManager.SpawnSpeedPotion(transform.position);
-        if (m_difficulty >= 1 && dropChance >= 7)
+        if (m_difficulty >= 1 && dropChance == 0)
             m_spawnManager.SpawnHealthPotion(transform.position);
     }
 

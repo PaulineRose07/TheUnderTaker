@@ -28,6 +28,7 @@ public class ChamberManager : MonoBehaviour
 
     private void Awake() {
         m_gameManager = FindObjectOfType<GameManager>();
+        m_player = m_gameManager.m_player;
         m_uiManager = FindObjectOfType<uiManager>();
         m_poolSystem = FindObjectOfType<PoolSystem>();
     }
