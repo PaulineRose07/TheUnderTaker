@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
             m_uiManager.GameOverOverlayOpen();
         }
 
-        if(m_boss.m_lives <= 0 && m_amountOfSpawns == 0)
+        if(m_boss.m_lives <= 0)
         {
             YouWon();
         }
@@ -139,10 +139,8 @@ public class GameManager : MonoBehaviour {
         
     }
 
-    IEnumerator YouWon()
+    private void YouWon()
     {
-        m_directionalLight.DOIntensity(.5f, .5f);
-        yield return new WaitForSeconds(3);
         m_uiManager.YouWonTheGame();
     }
 

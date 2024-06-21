@@ -48,7 +48,7 @@ public class NecromancerBehavior : MonoBehaviour {
         m_timerChangeFromTopToRight = m_timerDirectionTop;
         m_healthBar.m_maxValue = m_lives;
         m_gameManager.m_amountOfSpawns++;
-        m_collider2D.enabled = false;
+        m_collider2D.enabled = true;
 
         
         StartCoroutine(FirstTeleport());
@@ -57,16 +57,11 @@ public class NecromancerBehavior : MonoBehaviour {
     private void Update() {
 
         m_shieldTimer -= Time.deltaTime;
-        if (m_shieldTimer < 0) {
+        if (m_shieldTimer <= 0) {
             DeactivateShield();
         }
 
         if(m_lives == 10)
-        {
-            AddShield(m_ShieldLife);
-        }
-
-        if(m_lives == 5)
         {
             AddShield(m_ShieldLife);
         }
@@ -76,7 +71,7 @@ public class NecromancerBehavior : MonoBehaviour {
 
     public void AddShield(int _shieldTimer) {
         m_isShielded = true;
-        m_shieldTimer += _shieldTimer;
+        m_shieldTimer = _shieldTimer;
         m_shieldPrefab.SetActive(true);
         m_shieldPrefab.transform.DOScale(2, 1.5f);
     }
@@ -139,7 +134,7 @@ public class NecromancerBehavior : MonoBehaviour {
     public void LoseLife(int _damages)
     {
         m_lives -= _damages;
-        m_healthBar.ChangeHealthBar(-m_lives);
+        m_healthBar.ChangeHealthBar(-_damages);
     }
 
     public void ShowYourself() {
@@ -152,12 +147,11 @@ public class NecromancerBehavior : MonoBehaviour {
         m_showOffParticles.Play();
         m_audioSource.PlayOneShot(m_spawn);
         yield return new WaitForSeconds(.5f);
-        m_spriteRenderer.enabled = true;
+        //m_spriteRenderer.enabled = true;
         m_audioSource.PlayOneShot(m_laugh);
         yield return new WaitForSeconds(.1f);
-        m_collider2D.enabled = true;
-        m_spriteRenderer.enabled = false;
-        transform.localScale = Vector3.one;
+        //m_spriteRenderer.enabled = false;
+        //transform.localScale = Vector3.one;
         m_uiManager.BossPanelActivation();
     }
 

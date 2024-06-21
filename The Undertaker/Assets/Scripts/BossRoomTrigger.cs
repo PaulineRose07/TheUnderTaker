@@ -10,6 +10,7 @@ public class BossRoomTrigger : MonoBehaviour
         if (collision.TryGetComponent<PlayerMovements>(out PlayerMovements component))
         {
             m_necromancer.gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
 
     }

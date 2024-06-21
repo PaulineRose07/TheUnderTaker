@@ -22,7 +22,8 @@ public class NecromancienSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        m_canSpawn = true;
+        m_spawnTimer = m_spawnDelay;
     }
 
     // Update is called once per frame
@@ -76,6 +77,7 @@ public class NecromancienSpawner : MonoBehaviour
                     SpawnMiniNecromancer();
                     m_gameManager.m_amountOfSpawns++;
                 }
+                m_spawnTimer = m_spawnDelay;
             }
         }
     }
